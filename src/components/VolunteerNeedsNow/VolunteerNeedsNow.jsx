@@ -1,167 +1,31 @@
-import React from "react";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
 import { FaArrowRight } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import PostCard from "../PostCard/PostCard";
 
 const VolunteerNeedsNow = () => {
+  const [posts, setPosts] = useState([])
+
+  useEffect(() => {
+    const fetchAllPosts = async () => {
+      const { data } = await axios.get(
+        `${import.meta.env.VITE_API_URL}/volunteer-needs-now`
+      );
+      setPosts(data);
+    };
+    fetchAllPosts();
+  }, [])
+    console.log(posts)
   return (
     <div className="my-24">
       <h1 className="text-4xl text-green-600 inline-block shadow-lg p-3 drop-shadow-xl font-bold up border-l-8 border-green-500 pl-3 mb-8">
         Volunteer Needs Now
       </h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-        {/* cards */}
-        <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-          <img
-            className="w-full h-48 rounded-t-lg object-cover"
-            src="https://i.ibb.co.com/HYyx1bf/thumbnail.jpg"
-            alt=""
-          />
-          <div className="p-4">
-            <h2 className="text-2xl font-semibold mb-2">Post Title</h2>
-            <p className="text-sm text-gray-500 mb-2">
-              Category:{" "}
-              <span className="text-gray-700 font-semibold">Education</span>
-            </p>
-            <p className="text-sm text-gray-500 mb-4">
-              Deadline:{" "}
-              <span className="text-gray-500 font-semibold">25-12-2024</span>
-            </p>
-
-            <Link
-              className="btn bg-green-500 text-white hover:bg-green-600 transition-colors"
-              to={"/volunteer-need-post-details"}
-            >
-              View Details
-            </Link>
-          </div>
-        </div>
-
-        {/* Demo cards */}
-        <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-          <img
-            className="w-full h-48 rounded-t-lg object-cover"
-            src="https://i.ibb.co.com/HYyx1bf/thumbnail.jpg"
-            alt=""
-          />
-          <div className="p-4">
-            <h2 className="text-2xl font-semibold mb-2">Post Title</h2>
-            <p className="text-sm text-gray-500 mb-2">
-              Category:{" "}
-              <span className="text-gray-700 font-semibold">Education</span>
-            </p>
-            <p className="text-sm text-gray-500 mb-4">
-              Deadline:{" "}
-              <span className="text-gray-500 font-semibold">25-12-2024</span>
-            </p>
-
-            <Link
-              className="btn bg-green-500 text-white hover:bg-green-600 transition-colors"
-              to={"/volunteer-need-post-details"}
-            >
-              View Details
-            </Link>
-          </div>
-        </div>
-        <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-          <img
-            className="w-full h-48 rounded-t-lg object-cover"
-            src="https://i.ibb.co.com/HYyx1bf/thumbnail.jpg"
-            alt=""
-          />
-          <div className="p-4">
-            <h2 className="text-2xl font-semibold mb-2">Post Title</h2>
-            <p className="text-sm text-gray-500 mb-2">
-              Category:{" "}
-              <span className="text-gray-700 font-semibold">Education</span>
-            </p>
-            <p className="text-sm text-gray-500 mb-4">
-              Deadline:{" "}
-              <span className="text-gray-500 font-semibold">25-12-2024</span>
-            </p>
-
-            <Link
-              className="btn bg-green-500 text-white hover:bg-green-600 transition-colors"
-              to={"/volunteer-need-post-details"}
-            >
-              View Details
-            </Link>
-          </div>
-        </div>
-        <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-          <img
-            className="w-full h-48 rounded-t-lg object-cover"
-            src="https://i.ibb.co.com/HYyx1bf/thumbnail.jpg"
-            alt=""
-          />
-          <div className="p-4">
-            <h2 className="text-2xl font-semibold mb-2">Post Title</h2>
-            <p className="text-sm text-gray-500 mb-2">
-              Category:{" "}
-              <span className="text-gray-700 font-semibold">Education</span>
-            </p>
-            <p className="text-sm text-gray-500 mb-4">
-              Deadline:{" "}
-              <span className="text-gray-500 font-semibold">25-12-2024</span>
-            </p>
-
-            <Link
-              className="btn bg-green-500 text-white hover:bg-green-600 transition-colors"
-              to={"/volunteer-need-post-details"}
-            >
-              View Details
-            </Link>
-          </div>
-        </div>
-        <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-          <img
-            className="w-full h-48 rounded-t-lg object-cover"
-            src="https://i.ibb.co.com/HYyx1bf/thumbnail.jpg"
-            alt=""
-          />
-          <div className="p-4">
-            <h2 className="text-2xl font-semibold mb-2">Post Title</h2>
-            <p className="text-sm text-gray-500 mb-2">
-              Category:{" "}
-              <span className="text-gray-700 font-semibold">Education</span>
-            </p>
-            <p className="text-sm text-gray-500 mb-4">
-              Deadline:{" "}
-              <span className="text-gray-500 font-semibold">25-12-2024</span>
-            </p>
-
-            <Link
-              className="btn bg-green-500 text-white hover:bg-green-600 transition-colors"
-              to={"/volunteer-need-post-details"}
-            >
-              View Details
-            </Link>
-          </div>
-        </div>
-        <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-          <img
-            className="w-full h-48 rounded-t-lg object-cover"
-            src="https://i.ibb.co.com/HYyx1bf/thumbnail.jpg"
-            alt=""
-          />
-          <div className="p-4">
-            <h2 className="text-2xl font-semibold mb-2">Post Title</h2>
-            <p className="text-sm text-gray-500 mb-2">
-              Category:{" "}
-              <span className="text-gray-700 font-semibold">Education</span>
-            </p>
-            <p className="text-sm text-gray-500 mb-4">
-              Deadline:{" "}
-              <span className="text-gray-500 font-semibold">25-12-2024</span>
-            </p>
-
-            <Link
-              className="btn bg-green-500 text-white hover:bg-green-600 transition-colors"
-              to={"/volunteer-need-post-details"}
-            >
-              View Details
-            </Link>
-          </div>
-        </div>
+        {
+          posts.map(post => <PostCard key={post._id} post={post}></PostCard>)
+        }     
       </div>
 
       <div className="mt-4 flex justify-end">

@@ -10,13 +10,13 @@ const AllVolunteerNeedPosts = () => {
   const [search, setSearch] = useState("");
   const [viewMode, setViewMode] = useState("grid");
   useEffect(() => {
-    const fetchAddPosts = async () => {
+    const fetchAllPosts = async () => {
       const { data } = await axios.get(
         `${import.meta.env.VITE_API_URL}/all-posts?search=${search}`
       );
       setPosts(data);
     };
-    fetchAddPosts();
+    fetchAllPosts();
   }, [search]);
 
   const toggleView = () => {
@@ -25,7 +25,7 @@ const AllVolunteerNeedPosts = () => {
 
   return (
     <div className="my-16">
-      <div className="flex items-center justify-between">
+      <div className="flex items-center flex-col md:flex-row justify-between">
         <h1 className="text-4xl text-green-600 inline-block shadow-lg p-3 drop-shadow-xl font-bold up border-l-8 border-green-500 pl-3 mb-8">
           All Volunteer Need Posts
           <span className="badge badge-success text-white badge-lg relative bottom-7 -right-7 drop-shadow-lg w-10 h-10">
