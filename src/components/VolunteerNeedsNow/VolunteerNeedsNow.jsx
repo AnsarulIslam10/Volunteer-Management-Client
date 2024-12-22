@@ -165,7 +165,7 @@ const VolunteerNeedsNow = () => {
       </div>
 
       <div className="mt-4 flex justify-end">
-        <Link to={'/all-volunteer-need-post'} className="gap-2 hover:gap-4 transition-all btn btn-ghost px-1 sm:px-3 md:btn-md text-green-600 mt-2 rounded-none hover:bg-transparent hover:text-green-600 !text-2xl ">See all button <FaArrowRight/></Link>
+        <Link to={'/all-volunteer-need-posts'} className="gap-2 hover:gap-4 transition-all btn btn-ghost px-1 sm:px-3 md:btn-md text-green-600 mt-2 rounded-none hover:bg-transparent hover:text-green-600 !text-2xl ">See all button <FaArrowRight/></Link>
       </div>
     </div>
   );

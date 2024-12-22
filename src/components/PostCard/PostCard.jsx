@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { format } from 'date-fns'
 const PostCard = ({post}) => {
-    const {thumbnail, title, category, deadline } = post;
+    const {_id, thumbnail, title, category, deadline } = post;
     return (
         <div className="bg-white rounded-lg shadow-lg overflow-hidden">
           <img
@@ -23,7 +23,7 @@ const PostCard = ({post}) => {
 
             <Link
               className="btn bg-green-500 text-white hover:bg-green-600 transition-colors"
-              to={"/volunteer-need-post-details"}
+              to={`/volunteer-need-post-details/${_id}`}
             >
               View Details
             </Link>
