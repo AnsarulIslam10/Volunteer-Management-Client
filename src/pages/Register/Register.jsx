@@ -1,10 +1,52 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import securityAnimation2 from "../../assets/animations/security-animation2.json";
 import Lottie from "lottie-react";
+import { toast } from "react-toastify";
+import { AuthContext } from "../../provider/AuthProvider";
 const Register = () => {
+  const { createUser, setUser, updateUserProfile } = useContext(AuthContext);
+  const location = useLocation()
+  const navigate = useNavigate()
+  const [error, setError] = useState("");
   const [showPassword, setShowPassword] = useState(false);
+  const handleRegister = (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const name = form.name.value;
+    const email = form.email.value;
+    const photo = form.photo.value;
+    const password = form.password.value;
+
+    setError("");
+    if (password.length < 6) {
+      setError("Password must be at least 6 charecters long.");
+      return;
+    }
+    if (!/[a-z]/.test(password)) {
+      setError("Password must contain at least one lowercase letter");
+      return;
+    }
+    if (!/[A-Z]/.test(password)) {
+      setError("Password must contain at least one Uppercase letter");
+      return;
+    }
+
+    createUser(email, password)
+      .then((result) => {
+        const user = result.user
+        setUser(user);
+        updateUserProfile({displayName: name, photoURL: photo})
+        toast.success("Registration successfull");
+        navigate(location?.state ? location.state : "/")
+      })
+      .catch((err) => {
+        if (err && err.code) {
+         errorHandler(err)
+        }
+      });
+  };
 
   return (
     <div className="flex justify-center items-center min-h-screen">
@@ -20,7 +62,7 @@ const Register = () => {
             Register
           </h2>
 
-          <form className="">
+          <form onSubmit={handleRegister}>
             <div className="form-control">
               <label className="label text-lg">
                 <span>Name</span>
@@ -74,6 +116,11 @@ const Register = () => {
               >
                 {showPassword ? <FaEyeSlash /> : <FaEye />}
               </p>
+              {error && (
+                <div className="text-red-500 font-semibold text-sm mt-2">
+                  <p>{error}</p>
+                </div>
+              )}
             </div>
             <button className="btn bg-green-500 text-white text-xl hover:bg-green-600 hover:scale-105 transition-all duration-300  border-none rounded-md w-full mt-6">
               Register
