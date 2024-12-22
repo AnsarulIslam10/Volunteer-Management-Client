@@ -16,7 +16,6 @@ const AddVolunteerNeedPost = () => {
     const category = form.category.value;
     const location = form.location.value;
     const volunteersNumber = form.volunteersNumber.value;
-    const photo = form.photo.value;
     const deadline = startDate;
     const organizerName = user?.displayName;
     const organizerEmail = user?.email;
@@ -28,7 +27,6 @@ const AddVolunteerNeedPost = () => {
       category,
       location,
       volunteersNumber,
-      photo,
       deadline,
       organizer: {
           organizerName,
@@ -122,7 +120,7 @@ const AddVolunteerNeedPost = () => {
               <input
                 type="number"
                 name="volunteersNumber"
-                placeholder="Enter coffee category"
+                placeholder="Enter volunteer number"
                 className="input input-bordered w-full"
                 required
               />
@@ -141,19 +139,7 @@ const AddVolunteerNeedPost = () => {
             </div>
             <div>
               <label className="label">
-                <span className="label-text">Photo</span>
-              </label>
-              <input
-                type="text"
-                name="photo"
-                placeholder="Enter photo URL"
-                className="input input-bordered w-full"
-                required
-              />
-            </div>
-            <div>
-              <label className="label">
-                <span className="label-text">User Name</span>
+                <span className="label-text">Organizer Name</span>
               </label>
               <input
                 type="text"
@@ -167,7 +153,7 @@ const AddVolunteerNeedPost = () => {
             </div>
             <div>
               <label className="label">
-                <span className="label-text">User Email</span>
+                <span className="label-text">Organizer Email</span>
               </label>
               <input
                 type="email"
@@ -197,7 +183,7 @@ const AddVolunteerNeedPost = () => {
             type="submit"
             className="bg-green-500 text-lg text-white w-full py-3 rounded-md hover:bg-green-600 transition"
           >
-            Add Coffee
+            Add Post
           </button>
         </form>
       </div>
