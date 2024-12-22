@@ -2,7 +2,9 @@ import axios from "axios";
 import moment from "moment";
 
 import React, { useEffect, useState } from "react";
+import DatePicker from "react-datepicker";
 import { useParams } from "react-router-dom";
+import Modal from "../../components/Modal/Modal";
 
 const VolunteerNeedPostDetails = () => {
   const [post, setPost] = useState({});
@@ -26,7 +28,6 @@ const VolunteerNeedPostDetails = () => {
     organizer,
     description,
   } = post;
-
 
   return (
     <div className="mt-16 px-2">
@@ -60,7 +61,7 @@ const VolunteerNeedPostDetails = () => {
             <p className="font-semibold text-gray-700 mb-4">
               Deadline:{" "}
               <span className="font-normal text-gray-600">
-              {moment(deadline).format("DD/MM/YYYY")}
+                {moment(deadline).format("DD/MM/YYYY")}
               </span>
             </p>
           </div>
@@ -87,10 +88,16 @@ const VolunteerNeedPostDetails = () => {
           <h3 className="text-lg font-semibold">Description:</h3>
           {description}
         </div>
-        <button className="btn mt-6 w-full bg-green-500 text-white hover:bg-green-600 transition-all duration-300">
+        <button
+          onClick={() => document.getElementById("my_modal_5").showModal()}
+          className="btn mt-6 w-full bg-green-500 text-white hover:bg-green-600 transition-all duration-300"
+        >
           Be a Volunteer
         </button>
       </div>
+
+      
+      <Modal post={post}></Modal>
     </div>
   );
 };
