@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { format } from 'date-fns'
+import moment from 'moment';
 const PostCard = ({post}) => {
     const {_id, thumbnail, title, category, deadline } = post;
     return (
@@ -18,7 +18,7 @@ const PostCard = ({post}) => {
             </p>
             <p className="text-sm text-gray-500 mb-4">
               Deadline:{" "}
-              <span className="text-gray-500 font-semibold">{format(new Date(deadline), 'P')}</span>
+              <span className="text-gray-500 font-semibold">{moment(deadline).format("DD/MM/YYYY")}</span>
             </p>
 
             <Link

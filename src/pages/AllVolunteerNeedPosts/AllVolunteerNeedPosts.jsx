@@ -3,7 +3,8 @@ import React, { useEffect, useState } from "react";
 import PostCard from "../../components/PostCard/PostCard";
 import { FaBars, FaSearch, FaTh } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import { format } from "date-fns";
+import moment from "moment";
+
 
 const AllVolunteerNeedPosts = () => {
   const [posts, setPosts] = useState([]);
@@ -94,7 +95,7 @@ const AllVolunteerNeedPosts = () => {
                     {post.category}
                   </td>
                   <td className="text-gray-500">
-                    {format(new Date(post.deadline), "P")}
+                    {moment(post.deadline).format("DD/MM/YYYY")}
                   </td>
                   <td>
                     <Link
