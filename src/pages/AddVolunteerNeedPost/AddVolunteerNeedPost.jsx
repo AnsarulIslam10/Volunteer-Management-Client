@@ -2,9 +2,56 @@ import React, { useContext, useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { AuthContext } from "../../provider/AuthProvider";
+import axios from "axios";
+import { toast } from "react-toastify";
 const AddVolunteerNeedPost = () => {
   const [startDate, setStartDate] = useState(new Date());
   const { user } = useContext(AuthContext);
+
+  const handleSubmit = async(e) => {
+    e.preventDefault();
+    const form = e.target;
+    const title = form.title.value;
+    const thumbnail = form.thumbnail.value;
+    const category = form.category.value;
+    const location = form.location.value;
+    const volunteersNumber = form.volunteersNumber.value;
+    const photo = form.photo.value;
+    const deadline = startDate;
+    const organizerName = user?.displayName;
+    const organizerEmail = user?.email;
+    const description = form.description.value;
+
+    const newPost = {
+      title,
+      thumbnail,
+      category,
+      location,
+      volunteersNumber,
+      photo,
+      deadline,
+      organizer: {
+          organizerName,
+          organizerEmail
+      },
+      description,
+    };
+
+    console.log(newPost)
+
+    try {
+        await axios.post(`${import.meta.env.VITE_API_URL}/add-post`, newPost)
+        form.reset()
+        toast.success('Post Added Successfully')
+        // navigate ===>
+    } catch (error) {
+        console.log(error)
+        toast.error(error.message)
+    }
+
+
+  };
+
   return (
     <div className="min-h-screen flex flex-col items-center justify-center py-10">
       <div className="shadow-xl rounded-lg p-8 w-full max-w-4xl">
@@ -18,7 +65,7 @@ const AddVolunteerNeedPost = () => {
         </div>
 
         {/* form */}
-        <form>
+        <form onSubmit={handleSubmit}>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6">
             <div>
               <label className="label">
@@ -74,7 +121,7 @@ const AddVolunteerNeedPost = () => {
               </label>
               <input
                 type="number"
-                name="volunteers-number"
+                name="volunteersNumber"
                 placeholder="Enter coffee category"
                 className="input input-bordered w-full"
                 required
@@ -138,10 +185,10 @@ const AddVolunteerNeedPost = () => {
               <span className="label-text">Description</span>
             </label>
             <textarea
+              name="description"
               className="textarea w-full textarea-bordered"
               placeholder="Write a description"
               required
-
             ></textarea>
           </div>
 
