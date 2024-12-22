@@ -1,12 +1,63 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import securityAnimation from "../../assets/animations/security-animation.json"
 import Lottie from "lottie-react";
+import { AuthContext } from "../../provider/AuthProvider";
+import { toast } from "react-toastify";
 
 const Login = () => {
+  const { signInUser, signInWithGoogle } = useContext(AuthContext);
   const [showPassword, setShowPassword] = useState(false);
+  const [error, setError] = useState("");
+
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+    const email = e.target.email.value;
+    const password = e.target.password.value;
+
+    setError("");
+    if (password.length < 6) {
+      setError("Password must be at least 6 charecters long.");
+      return;
+    }
+    if (!/[a-z]/.test(password)) {
+      setError("Password must contain at least one lowercase letter");
+      return;
+    }
+    if (!/[A-Z]/.test(password)) {
+      setError("Password must contain at least one Uppercase letter");
+      return;
+    }
+
+    signInUser(email, password)
+      .then((result) => {
+        toast.success("Login successful");
+        navigate(location?.state ? location.state : "/");
+      })
+      .catch((err) => {
+        if (err && err.code) {
+          errorHandler(err)
+        }
+      });
+  };
+
+  const handleGoogleSignIn = () => {
+    signInWithGoogle()
+      .then((result) => {
+        toast.success("Login Successfull");
+        navigate(location?.state ? location.state : "/");
+      })
+      .catch((err) => {
+        if (err && err.code) {
+          errorHandler(err)
+        }
+      });
+  };
 
   return (
     <div className="flex justify-center items-center min-h-screen">
@@ -22,7 +73,7 @@ const Login = () => {
             LOGIN
           </h2>
 
-          <form className="space-y-2">
+          <form onSubmit={handleLogin} className="space-y-2">
             <div className="form-control">
               <label className="label ">
                 <span>Email</span>
@@ -52,6 +103,11 @@ const Login = () => {
               >
                 {showPassword ? <FaEyeSlash /> : <FaEye />}
               </p>
+              {error && (
+                <div className="text-red-500 font-semibold text-sm mt-2">
+                  <p>{error}</p>
+                </div>
+              )}
             </div>
             <div>
               <a href="#" className="text-sm  hover:underline">
@@ -64,7 +120,7 @@ const Login = () => {
 
             <div className="divider divider-success ">OR</div>
             <div className="flex justify-center gap-4 mb-4">
-              <a className="btn w-full drop-shadow-sm border-none rounded-md hover:bg- text-xl hover:scale-105 transition-all duration-300">
+              <a onClick={handleGoogleSignIn} className="btn w-full drop-shadow-sm border-none rounded-md hover:bg- text-xl hover:scale-105 transition-all duration-300">
                 Login with
                 <FcGoogle />
               </a>
