@@ -9,25 +9,30 @@ import Modal from "../../components/Modal/Modal";
 const VolunteerNeedPostDetails = () => {
   const [post, setPost] = useState({});
   const { id } = useParams();
+  // const [volunteersNumber, setVolunteersNumber] = useState(0);
+
   useEffect(() => {
     fetchPostData();
   }, [id]);
+
   const fetchPostData = async () => {
     const { data } = await axios.get(
       `${import.meta.env.VITE_API_URL}/post/${id}`
     );
     setPost(data);
+    // setVolunteersNumber(data.volunteersNumber);
   };
   const {
     title,
     thumbnail,
     category,
     location,
-    volunteersNumber,
     deadline,
     organizer,
+    volunteersNumber,
     description,
   } = post;
+  // console.log(volunteersNumber);
 
   return (
     <div className="mt-16 px-2">
@@ -96,7 +101,6 @@ const VolunteerNeedPostDetails = () => {
         </button>
       </div>
 
-      
       <Modal post={post}></Modal>
     </div>
   );

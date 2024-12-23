@@ -2,12 +2,17 @@ import moment from "moment";
 import React, { useContext, useState } from "react";
 import DatePicker from "react-datepicker";
 import { AuthContext } from "../../provider/AuthProvider";
+import axios from "axios";
+import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
 
 const Modal = ({ post }) => {
   const { user } = useContext(AuthContext);
-  const [status, setStatus] = useState("requested")
-  const [suggestion, setSuggestion] = useState("")
+  const [status, setStatus] = useState("requested");
+  const [suggestion, setSuggestion] = useState("");
+  const navigate = useNavigate()
   const {
+    _id,
     title,
     thumbnail,
     category,
@@ -17,10 +22,44 @@ const Modal = ({ post }) => {
     organizer,
     description,
   } = post;
-  console.log({...post, status, suggestion, volunteer: {
-    volunteerName: user.displayName,
-    volunteerEmail: user.email
-  }})
+
+  const handleRequest = async (e) => {
+    e.preventDefault();
+    if (volunteersNumber <= 0) {
+      toast.error("No volunteer needed for this post");
+      return;
+    }
+    const volunteerInfo = {
+      postId: _id,
+      title,
+      thumbnail,
+      category,
+      location,
+      status,
+      organizer,
+      description,
+      deadline,
+      volunteersNumber,
+      suggestion,
+      volunteer: {
+        volunteerName: user?.displayName,
+        volunteerEmail: user?.email,
+      },
+    };
+
+    try {
+      const { data } = await axios.post(
+        `${import.meta.env.VITE_API_URL}/volunteer-request`,
+        volunteerInfo
+      );
+
+      toast.success("Request added successfully");
+    } catch (error) {
+      console.log(error.message);
+      toast.error("An error occured while submitting the request");
+    }
+  };
+
   return (
     <dialog id="my_modal_5" className="modal-middle drop-shadow-2xl">
       <div className="w-[700px] mx-auto p-0">
@@ -41,8 +80,8 @@ const Modal = ({ post }) => {
           </div>
 
           {/* form */}
-          <form>
-            <div className="grid grid-cols-1 sm:grid-cols-2">
+          <form onSubmit={handleRequest}>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
               <div>
                 <label className="label">
                   <span className="label-text">Post Title</span>
@@ -164,7 +203,7 @@ const Modal = ({ post }) => {
             </div>
             <div className="divider">additional info</div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
               <div>
                 <label className="label">
                   <span className="label-text">Volunteer's Name</span>
@@ -198,13 +237,13 @@ const Modal = ({ post }) => {
                   <span className="label-text">Suggestion</span>
                 </label>
                 <textarea
-                name="suggestion"
-                value={suggestion}
-                onChange={e => setSuggestion(e.target.value)}
-                className="textarea w-full textarea-bordered"
-                placeholder="Write a suggestion"
-                required
-              ></textarea>
+                  name="suggestion"
+                  value={suggestion}
+                  onChange={(e) => setSuggestion(e.target.value)}
+                  className="textarea w-full textarea-bordered"
+                  placeholder="Write a suggestion"
+                  required
+                ></textarea>
               </div>
 
               <div>
