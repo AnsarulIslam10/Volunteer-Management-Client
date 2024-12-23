@@ -84,6 +84,7 @@ const Navbar = () => {
           >
             <img
               className="sm:w-10 sm:h-10 w-7 h-7 border-2 border-cyan-500 rounded-full ml-1"
+              referrerPolicy="no-referrer"
               src={user?.photoURL}
               alt=""
             />
