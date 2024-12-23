@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 import { FaEdit, FaTrash } from "react-icons/fa";
 import Swal from "sweetalert2";
 import { FcCancel } from "react-icons/fc";
+import { toast } from "react-toastify";
 
 const ManageMyPosts = () => {
   const { user } = useContext(AuthContext);
@@ -23,7 +24,7 @@ const ManageMyPosts = () => {
         );
         setMyPosts(data);
       } catch (error) {
-        console.log(error);
+        toast.error(error.message);
       } finally {
         setLoading(false);
       }
@@ -42,15 +43,13 @@ const ManageMyPosts = () => {
         );
         setMyRequestPosts(data);
       } catch (error) {
-        console.log(error);
+        toast.error(error.message);
       } finally {
         setLoading(false);
       }
     };
     fetchMyPosts();
   }, [user]);
-
-  console.log(myPosts);
 
   const handleDelete = (id) => {
     Swal.fire({

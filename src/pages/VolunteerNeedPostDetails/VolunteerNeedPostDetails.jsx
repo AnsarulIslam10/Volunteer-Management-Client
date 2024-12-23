@@ -31,7 +31,7 @@ const VolunteerNeedPostDetails = () => {
     volunteersNumber,
     description,
   } = post;
-  // console.log(volunteersNumber);
+
 
   return (
     <div className="mt-16 px-2">

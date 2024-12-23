@@ -58,7 +58,6 @@ const UpdateMyPost = () => {
         toast.success('Post Updated Successfully!!!')
         navigate('/manage-my-posts')
       } catch (err) {
-        console.log(err)
         toast.error(err.message)
       }
   };

@@ -55,7 +55,6 @@ const Modal = ({ post }) => {
 
       toast.success("Request added successfully");
     } catch (error) {
-      console.log(error.message);
       toast.error("An error occured while submitting the request");
     }
   };

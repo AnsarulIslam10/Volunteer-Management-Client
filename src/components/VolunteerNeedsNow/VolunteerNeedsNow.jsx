@@ -16,7 +16,6 @@ const VolunteerNeedsNow = () => {
     };
     fetchAllPosts();
   }, [])
-    console.log(posts)
   return (
     <div className="my-24">
       <h1 className="text-4xl text-green-600 inline-block shadow-lg p-3 drop-shadow-xl font-bold up border-l-8 border-green-500 pl-3 mb-8">
