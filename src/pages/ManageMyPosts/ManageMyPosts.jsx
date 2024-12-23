@@ -30,6 +30,38 @@ const ManageMyPosts = () => {
 
   console.log(myPosts);
 
+  const handleDelete = (id) => {
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then(async (result) => {
+      if (result.isConfirmed) {
+        const { data } = await axios.delete(
+          `${import.meta.env.VITE_API_URL}/my-posts/${id}`
+        );
+        if (data.deletedCount > 0) {
+          Swal.fire({
+            title: "Deleted!",
+            text: "Your Post has been deleted.",
+            icon: "success",
+          });
+          const remainingPosts = myPosts.filter((post) => post._id !== id);
+          setMyPosts(remainingPosts);
+        }
+      } else {
+        Swal.fire({
+          title: "Error",
+          text: "Somthing went wrong, try again.",
+          icon: "error",
+        });
+      }
+    });
+  };
 
   if (loading) {
     return <Loading></Loading>;
@@ -86,7 +118,10 @@ const ManageMyPosts = () => {
                   <button className="text-green-500 hover:scale-125 transition-all duration-300">
                     <FaEdit />
                   </button>
-                  <button className="text-red-600 hover:text-red-700 hover:scale-125 transition-all duration-300">
+                  <button
+                    onClick={() => handleDelete(post._id)}
+                    className="text-red-600 hover:text-red-700 hover:scale-125 transition-all duration-300"
+                  >
                     <FaTrash />
                   </button>
                 </td>
