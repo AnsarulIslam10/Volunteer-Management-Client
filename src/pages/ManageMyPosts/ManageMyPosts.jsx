@@ -42,7 +42,7 @@ const ManageMyPosts = () => {
     }).then(async (result) => {
       if (result.isConfirmed) {
         const { data } = await axios.delete(
-          `${import.meta.env.VITE_API_URL}/my-posts/${id}`
+          `${import.meta.env.VITE_API_URL}/my-post/${id}`
         );
         if (data.deletedCount > 0) {
           Swal.fire({
@@ -115,9 +115,9 @@ const ManageMyPosts = () => {
                   {moment(post.deadline).format("DD/MM/YYYY")}
                 </td>
                 <td className="text-2xl space-x-3">
-                  <button className="text-green-500 hover:scale-125 transition-all duration-300">
+                  <Link to={`/update-my-post/${post._id}`} className="text-green-500 inline-block hover:scale-125 transition-all duration-300">
                     <FaEdit />
-                  </button>
+                  </Link>
                   <button
                     onClick={() => handleDelete(post._id)}
                     className="text-red-600 hover:text-red-700 hover:scale-125 transition-all duration-300"
