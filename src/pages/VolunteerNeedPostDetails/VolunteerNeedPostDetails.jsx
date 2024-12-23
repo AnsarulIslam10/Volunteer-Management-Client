@@ -20,7 +20,6 @@ const VolunteerNeedPostDetails = () => {
       `${import.meta.env.VITE_API_URL}/post/${id}`
     );
     setPost(data);
-    // setVolunteersNumber(data.volunteersNumber);
   };
   const {
     title,
