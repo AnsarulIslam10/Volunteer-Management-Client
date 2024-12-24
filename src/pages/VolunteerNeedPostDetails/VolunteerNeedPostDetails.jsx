@@ -1,23 +1,21 @@
-import axios from "axios";
 import moment from "moment";
-
 import React, { useEffect, useState } from "react";
-import DatePicker from "react-datepicker";
 import { useParams } from "react-router-dom";
 import Modal from "../../components/Modal/Modal";
+import useAxiosSecure from "../../hooks/useAxiosSecure";
 
 const VolunteerNeedPostDetails = () => {
+  const axiosSecure = useAxiosSecure()
   const [post, setPost] = useState({});
   const { id } = useParams();
-  // const [volunteersNumber, setVolunteersNumber] = useState(0);
 
   useEffect(() => {
     fetchPostData();
   }, [id]);
 
   const fetchPostData = async () => {
-    const { data } = await axios.get(
-      `${import.meta.env.VITE_API_URL}/post/${id}`
+    const { data } = await axiosSecure.get(
+      `/post/${id}`
     );
     setPost(data);
   };

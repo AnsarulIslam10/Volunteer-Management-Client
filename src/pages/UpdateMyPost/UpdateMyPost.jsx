@@ -1,11 +1,12 @@
 import React, { useContext, useEffect, useState } from "react";
 import DatePicker from "react-datepicker";
 import { AuthContext } from "../../provider/AuthProvider";
-import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
 import { toast } from "react-toastify";
+import useAxiosSecure from "../../hooks/useAxiosSecure";
 
 const UpdateMyPost = () => {
+  const axiosSecure = useAxiosSecure()
   const { user } = useContext(AuthContext);
   const { id } = useParams();
   const [post, setPost] = useState([])
@@ -15,8 +16,8 @@ const UpdateMyPost = () => {
     fetchMyPost()
   }, [id]);
   const fetchMyPost = async () => {
-    const { data } = await axios.get(
-      `${import.meta.env.VITE_API_URL}/update-my-post/${id}`
+    const { data } = await axiosSecure.get(
+      `/update-my-post/${id}`
     );
     setPost(data)
     setStartDate(new Date(data.deadline))
@@ -50,11 +51,11 @@ const UpdateMyPost = () => {
       };
 
       try {
-        await axios.put(
-          `${import.meta.env.VITE_API_URL}/update-my-post/${id}`,
+        await axiosSecure.put(
+          `/update-my-post/${id}`,
           formData
         )
-        // form.reset()
+        form.reset()
         toast.success('Post Updated Successfully!!!')
         navigate('/manage-my-posts')
       } catch (err) {

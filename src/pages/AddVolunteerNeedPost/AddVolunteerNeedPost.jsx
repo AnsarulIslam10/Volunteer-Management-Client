@@ -2,9 +2,10 @@ import React, { useContext, useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { AuthContext } from "../../provider/AuthProvider";
-import axios from "axios";
 import { toast } from "react-toastify";
+import useAxiosSecure from "../../hooks/useAxiosSecure";
 const AddVolunteerNeedPost = () => {
+  const axiosSecure = useAxiosSecure()
   const [startDate, setStartDate] = useState(new Date());
   const { user } = useContext(AuthContext);
 
@@ -36,7 +37,7 @@ const AddVolunteerNeedPost = () => {
     };
 
     try {
-        await axios.post(`${import.meta.env.VITE_API_URL}/add-post`, newPost)
+        await axiosSecure.post(`/add-post`, newPost)
         form.reset()
         toast.success('Post Added Successfully')
         // navigate ===>

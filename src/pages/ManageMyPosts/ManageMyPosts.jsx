@@ -8,8 +8,11 @@ import { FaEdit, FaTrash } from "react-icons/fa";
 import Swal from "sweetalert2";
 import { FcCancel } from "react-icons/fc";
 import { toast } from "react-toastify";
+import useAxiosSecure from "../../hooks/useAxiosSecure";
+
 
 const ManageMyPosts = () => {
+  const axiosSecure = useAxiosSecure()
   const { user } = useContext(AuthContext);
   const [myPosts, setMyPosts] = useState([]);
   const [myRequestPosts, setMyRequestPosts] = useState([]);
@@ -19,8 +22,8 @@ const ManageMyPosts = () => {
     const fetchMyPosts = async () => {
       try {
         setLoading(true);
-        const { data } = await axios.get(
-          `${import.meta.env.VITE_API_URL}/my-posts?email=${user?.email}`
+        const { data } = await axiosSecure.get(
+          `/my-posts?email=${user?.email}`
         );
         setMyPosts(data);
       } catch (error) {
@@ -36,8 +39,8 @@ const ManageMyPosts = () => {
     const fetchMyPosts = async () => {
       try {
         setLoading(true);
-        const { data } = await axios.get(
-          `${import.meta.env.VITE_API_URL}/my-request-posts?email=${
+        const { data } = await axiosSecure.get(
+          `/my-request-posts?email=${
             user?.email
           }`
         );
@@ -94,8 +97,8 @@ const ManageMyPosts = () => {
       confirmButtonText: "Yes, delete it!",
     }).then(async (result) => {
       if (result.isConfirmed) {
-        const { data } = await axios.delete(
-          `${import.meta.env.VITE_API_URL}/my-request-post/${id}`
+        const { data } = await axiosSecure.delete(
+          `/my-request-post/${id}`
         );
         if (data.deletedCount > 0) {
           Swal.fire({
@@ -103,7 +106,9 @@ const ManageMyPosts = () => {
             text: "Your Post has been deleted.",
             icon: "success",
           });
-          const remainingRequestPosts = myRequestPosts.filter((post) => post._id !== id);
+          const remainingRequestPosts = myRequestPosts.filter(
+            (post) => post._id !== id
+          );
           setMyRequestPosts(remainingRequestPosts);
         }
       } else {
