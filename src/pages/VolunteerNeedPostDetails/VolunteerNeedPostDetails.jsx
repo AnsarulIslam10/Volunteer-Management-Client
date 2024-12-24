@@ -5,7 +5,7 @@ import Modal from "../../components/Modal/Modal";
 import useAxiosSecure from "../../hooks/useAxiosSecure";
 
 const VolunteerNeedPostDetails = () => {
-  const axiosSecure = useAxiosSecure()
+  const axiosSecure = useAxiosSecure();
   const [post, setPost] = useState({});
   const { id } = useParams();
 
@@ -14,9 +14,7 @@ const VolunteerNeedPostDetails = () => {
   }, [id]);
 
   const fetchPostData = async () => {
-    const { data } = await axiosSecure.get(
-      `/post/${id}`
-    );
+    const { data } = await axiosSecure.get(`/post/${id}`);
     setPost(data);
   };
   const {
@@ -29,7 +27,6 @@ const VolunteerNeedPostDetails = () => {
     volunteersNumber,
     description,
   } = post;
-
 
   return (
     <div className="mt-16 px-2">
@@ -54,12 +51,17 @@ const VolunteerNeedPostDetails = () => {
               Location:{" "}
               <span className="font-normal text-gray-600">{location}</span>
             </p>
-            <p className="font-semibold text-gray-700">
-              Volunteers Neede:{" "}
-              <span className="font-normal text-gray-600">
-                {volunteersNumber}
-              </span>
-            </p>
+            {volunteersNumber <= 0 ? (
+              <p className="text-lg text-green-500">Recruitment Closed</p>
+            ) : (
+              <p className="font-semibold text-gray-700">
+                Volunteers Neede:{" "}
+                <span className="font-normal text-gray-600">
+                  {volunteersNumber}
+                </span>
+              </p>
+            )}
+
             <p className="font-semibold text-gray-700 mb-4">
               Deadline:{" "}
               <span className="font-normal text-gray-600">

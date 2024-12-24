@@ -63,7 +63,7 @@ const Modal = ({ post, fetchPostData }) => {
 
   return (
     <dialog id="my_modal_5" className="modal-middle drop-shadow-2xl">
-      <div className="w-[700px] mx-auto p-0">
+      <div className="md:w-[700px] mx-auto p-0">
         <form method="dialog">
           {/* if there is a button in form, it will close the modal */}
           <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">
