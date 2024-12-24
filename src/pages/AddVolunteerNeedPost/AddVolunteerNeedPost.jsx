@@ -49,13 +49,13 @@ const AddVolunteerNeedPost = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center py-10 px-2">
-      <div className="shadow-xl dark:bg-[#1a242e] dark:text-white rounded-lg p-8 w-full max-w-4xl">
+    <div className="min-h-screen max-w-7xl mx-auto flex flex-col items-center justify-center py-10 px-2">
+      <div className="shadow-xl dark:bg-[#1a242e] dark:text-white rounded-lg p-4 sm:p-6 md:p-8 w-full max-w-4xl">
         <div className="text-center mb-10">
-          <h2 className="text-4xl font-bold text-gray-700 dark:text-[#e0e0e0] mb-2 font-ranch">
+          <h2 className="sm:text-2xl text-xl md:text-4xl font-bold text-gray-700 dark:text-[#e0e0e0] mb-2">
             Add Volunteer Need Post
           </h2>
-          <p className="text-gray-500 dark:text-[#e0e0e0] max-w-md mx-auto">
+          <p className="text-gray-500 text-xs sm:text-sm dark:text-[#e0e0e0] max-w-md mx-auto">
             Fill in the form below to add a new post.
           </p>
         </div>
@@ -179,7 +179,7 @@ const AddVolunteerNeedPost = () => {
           {/* Submit Button */}
           <button
             type="submit"
-            className="bg-green-500 text-lg text-white w-full py-3 rounded-md hover:bg-green-600 transition"
+            className="bg-green-500 text-lg mt-4 text-white w-full py-3 rounded-md hover:bg-green-600 transition"
           >
             Add Post
           </button>

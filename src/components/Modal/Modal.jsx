@@ -62,20 +62,20 @@ const Modal = ({ post, fetchPostData }) => {
   };
 
   return (
-    <dialog id="my_modal_5" className="modal-middle drop-shadow-2xl">
+    <dialog id="my_modal_5" className="modal-middle dark:bg-[#1a242e]  drop-shadow-2xl">
       <div className="md:w-[700px] mx-auto p-0">
         <form method="dialog">
           {/* if there is a button in form, it will close the modal */}
-          <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">
+          <button className="btn btn-sm btn-circle btn-ghost dark:text-white absolute right-2 top-2">
             ✕
           </button>
         </form>
         <div className="shadow-xl rounded-lg p-8 w-full max-w-4xl">
           <div className="text-center mb-2">
-            <h2 className="text-4xl font-bold text-gray-700 mb-2 font-ranch">
+            <h2 className="text-xl sm:text-2xl dark:text-[#e0e0e0] md:text-4xl font-bold text-gray-700 mb-2">
               Be a Volunteer
             </h2>
-            <p className="text-gray-500 max-w-md mx-auto">
+            <p className="text-gray-500 text-xs sm:text-sm dark:text-[#e0e0e0] max-w-md mx-auto">
               Fill in the form below to become a volunteer.
             </p>
           </div>
@@ -85,7 +85,7 @@ const Modal = ({ post, fetchPostData }) => {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
               <div>
                 <label className="label">
-                  <span className="label-text">Post Title</span>
+                  <span className="label-text text-white">Post Title</span>
                 </label>
                 <input
                   type="text"
@@ -98,7 +98,7 @@ const Modal = ({ post, fetchPostData }) => {
               </div>
               <div>
                 <label className="label">
-                  <span className="label-text">Thumbnail</span>
+                  <span className="label-text text-white">Thumbnail</span>
                 </label>
                 <input
                   type="url"
@@ -111,7 +111,7 @@ const Modal = ({ post, fetchPostData }) => {
               </div>
               <div>
                 <label className="label">
-                  <span className="label-text">Category</span>
+                  <span className="label-text text-white">Category</span>
                 </label>
                 <input
                   type="text"
@@ -124,7 +124,7 @@ const Modal = ({ post, fetchPostData }) => {
               </div>
               <div>
                 <label className="label">
-                  <span className="label-text">Location</span>
+                  <span className="label-text text-white">Location</span>
                 </label>
                 <input
                   type="text"
@@ -137,7 +137,7 @@ const Modal = ({ post, fetchPostData }) => {
               </div>
               <div>
                 <label className="label">
-                  <span className="label-text">No. of volunteers needed</span>
+                  <span className="label-text text-white">No. of volunteers needed</span>
                 </label>
                 <input
                   type="number"
@@ -150,7 +150,7 @@ const Modal = ({ post, fetchPostData }) => {
               </div>
               <div>
                 <label className="label">
-                  <span className="label-text">Deadline</span>
+                  <span className="label-text text-white">Deadline</span>
                 </label>
                 <div className="w-full">
                   <DatePicker
@@ -162,7 +162,7 @@ const Modal = ({ post, fetchPostData }) => {
               </div>
               <div>
                 <label className="label">
-                  <span className="label-text">Organizer Name</span>
+                  <span className="label-text text-white">Organizer Name</span>
                 </label>
                 <input
                   type="text"
@@ -176,7 +176,7 @@ const Modal = ({ post, fetchPostData }) => {
               </div>
               <div>
                 <label className="label">
-                  <span className="label-text">Organizer Email</span>
+                  <span className="label-text text-white">Organizer Email</span>
                 </label>
                 <input
                   type="email"
@@ -191,7 +191,7 @@ const Modal = ({ post, fetchPostData }) => {
             </div>
             <div>
               <label className="label">
-                <span className="label-text">Description</span>
+                <span className="label-text text-white">Description</span>
               </label>
               <textarea
                 name="description"
@@ -202,12 +202,12 @@ const Modal = ({ post, fetchPostData }) => {
                 readOnly
               ></textarea>
             </div>
-            <div className="divider">additional info</div>
+            <div className="divider divider-success dark:text-[#e0e0e0]">additional info</div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
               <div>
                 <label className="label">
-                  <span className="label-text">Volunteer's Name</span>
+                  <span className="label-text text-white">Volunteer's Name</span>
                 </label>
                 <input
                   type="text"
@@ -221,7 +221,7 @@ const Modal = ({ post, fetchPostData }) => {
               </div>
               <div>
                 <label className="label">
-                  <span className="label-text">Volunteer's Email</span>
+                  <span className="label-text text-white">Volunteer's Email</span>
                 </label>
                 <input
                   type="email"
@@ -235,7 +235,7 @@ const Modal = ({ post, fetchPostData }) => {
               </div>
               <div>
                 <label className="label">
-                  <span className="label-text">Suggestion</span>
+                  <span className="label-text text-white">Suggestion</span>
                 </label>
                 <textarea
                   name="suggestion"
@@ -249,7 +249,7 @@ const Modal = ({ post, fetchPostData }) => {
 
               <div>
                 <label className="label">
-                  <span className="label-text">Status</span>
+                  <span className="label-text text-white">Status</span>
                 </label>
                 <input
                   type="text"
@@ -266,7 +266,7 @@ const Modal = ({ post, fetchPostData }) => {
             {/* Submit Button */}
             <button
               type="submit"
-              className="bg-green-500 text-lg text-white w-full py-3 rounded-md hover:bg-green-600 transition"
+              className="bg-green-500 mt-4 text-lg text-white w-full py-3 rounded-md hover:bg-green-600 transition"
             >
               Request
             </button>

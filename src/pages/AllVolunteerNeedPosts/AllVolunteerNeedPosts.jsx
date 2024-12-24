@@ -26,10 +26,10 @@ const AllVolunteerNeedPosts = () => {
 
   return (
     <div className="my-16 max-w-7xl px-2 mx-auto">
-      <div className="flex items-center flex-col md:flex-row justify-between">
-        <h1 className="text-4xl text-green-600 dark:shadow-white/10 inline-block shadow-lg p-3 drop-shadow-xl font-bold up border-l-8 border-green-500 pl-3 mb-8">
+      <div className="flex items-center flex-col lg:flex-row justify-between">
+        <h1 className="sm:text-2xl md:text-4xl text-green-600 dark:shadow-white/10 inline-block shadow-lg p-3 drop-shadow-xl font-bold up border-l-8 border-green-500 pl-3 mb-8">
           All Volunteer Need Posts
-          <span className="badge badge-success text-white badge-lg drop-shadow-lg w-10 h-10 relative bottom-2 ml-2">
+          <span className="badge badge-success text-white badge-lg drop-shadow-lg w-6 h-6 sm:w-8 sm:h-8  relative sm:bottom-1 md:bottom-2 ml-2">
             {posts.length}
           </span>
         </h1>

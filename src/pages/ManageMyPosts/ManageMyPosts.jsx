@@ -110,7 +110,7 @@ const ManageMyPosts = () => {
     <div className="my-16 max-w-7xl px-2 mx-auto">
       {!myPosts || myPosts.length === 0 ? (
         <div className="min-h-[60vh]">
-          <h1 className="text-4xl text-green-600 dark:shadow-white/10 inline-block shadow-lg p-3 drop-shadow-xl font-bold up border-l-8 border-green-500 pl-3 mb-8">
+          <h1 className="sm:text-2xl md:text-4xl text-green-600 dark:shadow-white/10 inline-block shadow-lg p-3 drop-shadow-xl font-bold up border-l-8 border-green-500 pl-3 mb-8">
             My Posts
           </h1>
           <p className="text-3xl font-semibold text-center text-red-400">
@@ -119,10 +119,10 @@ const ManageMyPosts = () => {
         </div>
       ) : (
         <div className="mb-16">
-          <div className="flex items-center flex-col md:flex-row justify-between">
-            <h1 className="text-4xl text-green-600 dark:shadow-white/10 inline-block shadow-lg p-3 drop-shadow-xl font-bold up border-l-8 border-green-500 pl-3 mb-8">
+          <div>
+            <h1 className="sm:text-2xl md:text-4xl text-green-600 dark:shadow-white/10 inline-block shadow-lg p-3 drop-shadow-xl font-bold up border-l-8 border-green-500 pl-3 mb-8">
               My Posts
-              <span className="badge badge-success text-white badge-lg drop-shadow-lg w-10 h-10 relative bottom-2 ml-2">
+              <span className="badge badge-success text-white badge-lg drop-shadow-lg w-6 h-6 sm:w-8 sm:h-8  relative sm:bottom-1 md:bottom-2 ml-2">
                 {myPosts.length}
               </span>
             </h1>
@@ -161,16 +161,16 @@ const ManageMyPosts = () => {
                     <td className="text-gray-500">
                       {moment(post.deadline).format("DD/MM/YYYY")}
                     </td>
-                    <td className="text-2xl space-x-3">
+                    <td className="space-x-3 md:space-x-3">
                       <Link
                         to={`/update-my-post/${post._id}`}
-                        className="text-green-500 inline-block hover:scale-125 transition-all duration-300"
+                        className="text-green-500 text-2xl inline-block hover:scale-125 transition-all duration-300"
                       >
                         <FaEdit />
                       </Link>
                       <button
                         onClick={() => handleDelete(post._id)}
-                        className="text-red-600 hover:text-red-700 hover:scale-125 transition-all duration-300"
+                        className="text-red-600 text-2xl hover:text-red-700 hover:scale-125 transition-all duration-300"
                       >
                         <FaTrash />
                       </button>
@@ -187,7 +187,7 @@ const ManageMyPosts = () => {
       {/* My post request */}
       {!myRequestPosts || myRequestPosts.length === 0 ? (
         <div className="min-h-[60vh]">
-          <h1 className="text-4xl text-green-600 dark:shadow-white/10 inline-block shadow-lg p-3 drop-shadow-xl font-bold up border-l-8 border-green-500 pl-3 mb-8">
+          <h1 className="sm:text-2xl md:text-4xl text-green-600 dark:shadow-white/10 inline-block shadow-lg p-3 drop-shadow-xl font-bold up border-l-8 border-green-500 pl-3 mb-8">
             My Volunteer Request Post
           </h1>
           <p className="text-3xl font-semibold text-center text-red-400">
@@ -196,10 +196,10 @@ const ManageMyPosts = () => {
         </div>
       ) : (
         <div>
-          <div className="flex items-center flex-col md:flex-row justify-between">
-            <h1 className="text-4xl text-green-600 dark:shadow-white/10 inline-block shadow-lg p-3 drop-shadow-xl font-bold up border-l-8 border-green-500 pl-3 mb-8">
+          <div>
+            <h1 className="sm:text-2xl md:text-4xl text-green-600 dark:shadow-white/10 inline-block shadow-lg p-3 drop-shadow-xl font-bold up border-l-8 border-green-500 pl-3 mb-8">
               My Volunteer Request Post
-              <span className="badge badge-success text-white badge-lg drop-shadow-lg w-10 h-10 relative bottom-2 ml-2">
+              <span className="badge badge-success text-white badge-lg drop-shadow-lg w-6 h-6 sm:w-8 sm:h-8  relative sm:bottom-1 md:bottom-2 ml-2">
                 {myRequestPosts.length}
               </span>
             </h1>

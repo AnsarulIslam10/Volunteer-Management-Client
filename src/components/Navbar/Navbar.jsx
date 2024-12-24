@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../provider/AuthProvider";
+import { FaBars, FaHands } from "react-icons/fa";
 
 const Navbar = () => {
   const { user, signOutUser } = useContext(AuthContext);
@@ -95,21 +96,8 @@ const Navbar = () => {
       <div className="navbar bg-base-100 backdrop-blur-md dark:bg-black/5 bg-white/5 px-0">
         <div className="navbar-start">
           <div className="dropdown">
-            <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-5 w-5"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M4 6h16M4 12h8m-8 6h16"
-                />
-              </svg>
+            <div tabIndex={0} role="button" className="lg:hidden mr-2 text-xl">
+             <FaBars/>
             </div>
             <ul
               tabIndex={0}
@@ -122,14 +110,14 @@ const Navbar = () => {
             to={"/"}
             className="cursor-pointer text-3xl tracking-widest text-green-500 font-bold uppercase "
           >
-            Vollify
+            <FaHands className="text-4xl"/>
           </Link>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">{links}</ul>
         </div>
         <div className="navbar-end">
-          <div>
+          <div className="mt-2">
             <label className="swap swap-rotate">
               {/* this hidden checkbox controls the state */}
               <input
@@ -142,7 +130,7 @@ const Navbar = () => {
 
               {/* sun icon */}
               <svg
-                className="swap-off h-10 w-10 fill-current text-yellow-500"
+                className="swap-off h-7 w-7 fill-current text-yellow-500"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
               >
@@ -151,7 +139,7 @@ const Navbar = () => {
 
               {/* moon icon */}
               <svg
-                className="swap-on h-10 w-10 fill-current text-blue-500"
+                className="swap-on h-7 w-7 fill-current text-blue-500"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
               >
@@ -176,7 +164,7 @@ const Navbar = () => {
               </div>
               <button
                 onClick={handleLogOut}
-                className="btn border-none bg-green-500 text-white font-semibold text-lg"
+                className="btn btn-sm md:btn-md border-none rounded-md bg-green-500 text-white font-semibold text-lg"
               >
                 Log Out
               </button>

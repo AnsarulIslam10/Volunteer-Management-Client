@@ -49,7 +49,7 @@ const Register = () => {
   };
 
   return (
-    <div className="flex justify-center items-center min-h-screen">
+    <div className="flex justify-center items-center max-w-7xl mx-auto px-2 my-16 min-h-screen">
       <div className="w-[700px] mb-96 dark:bg-[#1a242e] px-2 flex shadow-xl rounded-2xl overflow-hidden">
         <div className="hidden sm:block w-1/2">
           <div className="flex flex-col justify-center items-center h-full">

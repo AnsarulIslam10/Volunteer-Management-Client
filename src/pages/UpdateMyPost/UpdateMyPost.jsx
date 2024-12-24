@@ -63,13 +63,13 @@ const UpdateMyPost = () => {
       }
   };
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center py-10">
-      <div className="shadow-xl dark:bg-[#1a242e] rounded-lg p-8 w-full max-w-4xl">
+    <div className="min-h-screen max-w-7xl mx-auto px-2 flex flex-col items-center justify-center py-10">
+      <div className="shadow-xl dark:bg-[#1a242e] dark:text-white rounded-lg p-4 sm:p-6 md:p-8 w-full max-w-4xl">
         <div className="text-center mb-10">
-          <h2 className="text-4xl font-bold dark:text-[#e0e0e0] text-gray-700 mb-2 font-ranch">
+          <h2 className="sm:text-2xl text-xl md:text-4xl font-bold text-gray-700 dark:text-[#e0e0e0] mb-2">
             Update Volunteer Need Post
           </h2>
-          <p className="text-gray-500 max-w-md dark:text-[#e0e0e0] mx-auto">Update your post</p>
+          <p className="text-gray-500 text-xs sm:text-sm dark:text-[#e0e0e0] max-w-md mx-auto">Update your post</p>
         </div>
 
         {/* form */}
@@ -197,7 +197,7 @@ const UpdateMyPost = () => {
           {/* Submit Button */}
           <button
             type="submit"
-            className="bg-green-500 text-lg text-white w-full py-3 rounded-md hover:bg-green-600 transition"
+            className="bg-green-500 mt-4 text-lg text-white w-full py-3 rounded-md hover:bg-green-600 transition"
           >
             Update
           </button>

@@ -32,12 +32,12 @@ const Slider = () => {
         className="mySwiper"
       >
         <SwiperSlide className="relative">
-          <img className="object-cover w-full h-[600px]" src={slider1} />
+          <img className="object-cover w-full" src={slider1} />
           <div
-            className="absolute top-0 w-full h-[600px] text-start flex flex-col justify-center pl-20
+            className="absolute top-0 w-full h-full text-start flex flex-col justify-center pl-20
            p-12 text-white bg-black bg-opacity-50"
           >
-            <h1 className="text-sm sm:text-lg md:text-2xl uppercase tracking-wide border-l-4 border-green-500 pl-4 lg:text-5xl text-cyan-500 font-bold mb-2">
+            <h1 className="text-sm sm:text-lg md:text-2xl uppercase tracking-wide border-l-4 border-green-500 pl-4 lg:text-5xl text-green-500 font-bold mb-2">
               Make a Difference Today
             </h1>
             <p className="max-w-md hidden sm:block text-md text-gray-400 sm:mt-2 sm:mb-2 md:mb-4 md:mt-4">
@@ -57,12 +57,12 @@ const Slider = () => {
           </div>
         </SwiperSlide>
         <SwiperSlide className="relative">
-          <img className="object-cover w-full h-[600px]" src={slider2} />
+          <img className="object-cover w-full" src={slider1} />
           <div
-            className="absolute top-0 w-full h-[600px] text-start flex flex-col justify-center pl-20
+            className="absolute top-0 w-full h-full text-start flex flex-col justify-center pl-20
            p-12 text-white bg-black bg-opacity-50"
           >
-            <h1 className="text-sm sm:text-lg md:text-2xl uppercase tracking-wide border-l-4 border-green-500 pl-4 lg:text-5xl text-cyan-500 font-bold mb-2">
+            <h1 className="text-sm sm:text-lg md:text-2xl uppercase tracking-wide border-l-4 border-green-500 pl-4 lg:text-5xl text-green-500 font-bold mb-2">
               Join Hands for a Cause
             </h1>
             <p className="max-w-md hidden sm:block text-md text-gray-400 sm:mt-2 sm:mb-2 md:mb-4 md:mt-4">
@@ -82,12 +82,12 @@ const Slider = () => {
           </div>
         </SwiperSlide>
         <SwiperSlide className="relative">
-          <img className="object-cover w-full h-[600px]" src={slider3} />
+          <img className="object-cover w-full" src={slider1} />
           <div
-            className="absolute top-0 w-full h-[600px] text-start flex flex-col justify-center pl-20
+            className="absolute top-0 w-full h-full text-start flex flex-col justify-center pl-20
            p-12 text-white bg-black bg-opacity-50"
           >
-            <h1 className="text-sm sm:text-lg md:text-2xl uppercase tracking-wide border-l-4 border-green-500 pl-4 lg:text-5xl text-cyan-500 font-bold mb-2">
+            <h1 className="text-sm sm:text-lg md:text-2xl uppercase tracking-wide border-l-4 border-green-500 pl-4 lg:text-5xl text-green-500 font-bold mb-2">
               Volunteer. Impact. Inspire
             </h1>
             <p className="max-w-md hidden sm:block text-md text-gray-400 sm:mt-2 sm:mb-2 md:mb-4 md:mt-4">
