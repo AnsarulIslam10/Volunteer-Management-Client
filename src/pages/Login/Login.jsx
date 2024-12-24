@@ -16,10 +16,6 @@ const Login = () => {
   const location = useLocation();
   const navigate = useNavigate();
 
-  if (user) {
-    navigate('/')
-  }
-
   const handleLogin = (e) => {
     e.preventDefault();
     const email = e.target.email.value;
