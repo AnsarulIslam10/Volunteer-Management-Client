@@ -6,7 +6,7 @@ import axios from "axios";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 
-const Modal = ({ post }) => {
+const Modal = ({ post, fetchPostData }) => {
   const { user } = useContext(AuthContext);
   const [status, setStatus] = useState("requested");
   const [suggestion, setSuggestion] = useState("");
@@ -53,9 +53,11 @@ const Modal = ({ post }) => {
         volunteerInfo
       );
       toast.success("Request added successfully");
+      fetchPostData()
+      Modal.close()
       
     } catch (error) {
-      toast.error(error.response.data);
+      toast.error(error.response.data || 'Something went wrong');
     }
   };
 

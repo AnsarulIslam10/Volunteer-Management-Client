@@ -1,5 +1,5 @@
 import moment from "moment";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useParams } from "react-router-dom";
 import Modal from "../../components/Modal/Modal";
 import useAxiosSecure from "../../hooks/useAxiosSecure";
@@ -98,7 +98,7 @@ const VolunteerNeedPostDetails = () => {
         </button>
       </div>
 
-      <Modal post={post}></Modal>
+      <Modal post={post} fetchPostData={fetchPostData}></Modal>
     </div>
   );
 };
