@@ -4,7 +4,7 @@ import moment from "moment";
 const PostCard = ({ post }) => {
   const { _id, thumbnail, title, category, deadline, volunteersNumber } = post;
   return (
-    <div className="bg-white rounded-lg shadow-lg overflow-hidden">
+    <div className="bg-white dark:bg-[#1a242e] rounded-lg shadow-lg overflow-hidden">
       <img
         className="w-full h-48 rounded-t-lg object-cover"
         src={thumbnail}
@@ -34,7 +34,7 @@ const PostCard = ({ post }) => {
         }
 
         <Link
-          className="btn bg-green-500 text-white hover:bg-green-600 transition-colors"
+          className="btn border-none bg-green-500 text-white hover:bg-green-600 transition-colors"
           to={`/volunteer-need-post-details/${_id}`}
         >
           View Details

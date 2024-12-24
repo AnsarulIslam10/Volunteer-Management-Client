@@ -64,12 +64,12 @@ const UpdateMyPost = () => {
   };
   return (
     <div className="min-h-screen flex flex-col items-center justify-center py-10">
-      <div className="shadow-xl rounded-lg p-8 w-full max-w-4xl">
+      <div className="shadow-xl dark:bg-[#1a242e] rounded-lg p-8 w-full max-w-4xl">
         <div className="text-center mb-10">
-          <h2 className="text-4xl font-bold text-gray-700 mb-2 font-ranch">
+          <h2 className="text-4xl font-bold dark:text-[#e0e0e0] text-gray-700 mb-2 font-ranch">
             Update Volunteer Need Post
           </h2>
-          <p className="text-gray-500 max-w-md mx-auto">Update your post</p>
+          <p className="text-gray-500 max-w-md dark:text-[#e0e0e0] mx-auto">Update your post</p>
         </div>
 
         {/* form */}
@@ -77,76 +77,76 @@ const UpdateMyPost = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6">
             <div>
               <label className="label">
-                <span className="label-text">Post Title</span>
+                <span className="label-text dark:text-[#e0e0e0]">Post Title</span>
               </label>
               <input
                 type="text"
                 name="title"
                 defaultValue={post?.title}
                 placeholder="Enter post title"
-                className="input input-bordered w-full"
+                className="input input-bordered text-black w-full"
                 required
               />
             </div>
             <div>
               <label className="label">
-                <span className="label-text">Thumbnail</span>
+                <span className="label-text dark:text-[#e0e0e0]">Thumbnail</span>
               </label>
               <input
                 type="url"
                 name="thumbnail"
                 defaultValue={post?.thumbnail}
                 placeholder="Enter thumbnail url"
-                className="input input-bordered w-full"
+                className="input input-bordered text-black w-full"
                 required
               />
             </div>
             <div>
               <label className="label">
-                <span className="label-text">Category</span>
+                <span className="label-text dark:text-[#e0e0e0]">Category</span>
               </label>
               <input
                 type="text"
                 defaultValue={post?.category}
                 name="category"
                 placeholder="Enter category"
-                className="input input-bordered w-full"
+                className="input input-bordered text-black w-full"
                 required
               />
             </div>
             <div>
               <label className="label">
-                <span className="label-text">Location</span>
+                <span className="label-text dark:text-[#e0e0e0]">Location</span>
               </label>
               <input
                 type="text"
                 name="location"
                 defaultValue={post?.location}
                 placeholder="Enter location"
-                className="input input-bordered w-full"
+                className="input input-bordered text-black w-full"
                 required
               />
             </div>
             <div>
               <label className="label">
-                <span className="label-text">No. of volunteers needed</span>
+                <span className="label-text dark:text-[#e0e0e0]">No. of volunteers needed</span>
               </label>
               <input
                 type="number"
                 name="volunteersNumber"
                 defaultValue={post?.volunteersNumber}
                 placeholder="Enter volunteer number"
-                className="input input-bordered w-full"
+                className="input input-bordered text-black w-full"
                 required
               />
             </div>
             <div>
               <label className="label">
-                <span className="label-text">Deadline</span>
+                <span className="label-text dark:text-[#e0e0e0]">Deadline</span>
               </label>
               <div className="w-full">
                 <DatePicker
-                  className="border p-2 w-full rounded-md cursor-pointer"
+                  className="border text-black p-2 w-full rounded-md cursor-pointer"
                   selected={startDate}
                   onChange={(date) => setStartDate(date)}
                 />
@@ -154,7 +154,7 @@ const UpdateMyPost = () => {
             </div>
             <div>
               <label className="label">
-                <span className="label-text">Organizer Name</span>
+                <span className="label-text dark:text-[#e0e0e0]">Organizer Name</span>
               </label>
               <input
                 type="text"
@@ -162,13 +162,13 @@ const UpdateMyPost = () => {
                 placeholder="Your Name"
                 defaultValue={user.displayName}
                 readOnly
-                className="input input-bordered w-full"
+                className="input input-bordered text-black w-full"
                 required
               />
             </div>
             <div>
               <label className="label">
-                <span className="label-text">Organizer Email</span>
+                <span className="label-text dark:text-[#e0e0e0]">Organizer Email</span>
               </label>
               <input
                 type="email"
@@ -176,18 +176,18 @@ const UpdateMyPost = () => {
                 placeholder="email"
                 defaultValue={user.email}
                 readOnly
-                className="input input-bordered w-full"
+                className="input input-bordered text-black w-full"
                 required
               />
             </div>
           </div>
           <div>
             <label className="label">
-              <span className="label-text">Description</span>
+              <span className="label-text dark:text-[#e0e0e0]">Description</span>
             </label>
             <textarea
               name="description"
-              className="textarea w-full textarea-bordered"
+              className="textarea text-black w-full textarea-bordered"
               placeholder="Write a description"
               defaultValue={post?.description}
               required

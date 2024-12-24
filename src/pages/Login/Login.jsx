@@ -62,7 +62,7 @@ const Login = () => {
 
   return (
     <div className="flex justify-center items-center min-h-screen">
-      <div className="w-[700px] mb-96 px-2 flex shadow-xl rounded-2xl overflow-hidden">
+      <div className="w-[700px] mb-96 px-2 dark:bg-[#1a242e] flex shadow-xl rounded-2xl overflow-hidden">
         <div className="hidden sm:block w-1/2">
           <div className="flex flex-col justify-center items-center h-full">
             <Lottie animationData={securityAnimation}></Lottie>

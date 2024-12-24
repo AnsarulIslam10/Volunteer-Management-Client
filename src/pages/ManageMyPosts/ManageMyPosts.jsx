@@ -10,9 +10,8 @@ import { FcCancel } from "react-icons/fc";
 import { toast } from "react-toastify";
 import useAxiosSecure from "../../hooks/useAxiosSecure";
 
-
 const ManageMyPosts = () => {
-  const axiosSecure = useAxiosSecure()
+  const axiosSecure = useAxiosSecure();
   const { user } = useContext(AuthContext);
   const [myPosts, setMyPosts] = useState([]);
   const [myRequestPosts, setMyRequestPosts] = useState([]);
@@ -40,9 +39,7 @@ const ManageMyPosts = () => {
       try {
         setLoading(true);
         const { data } = await axiosSecure.get(
-          `/my-request-posts?email=${
-            user?.email
-          }`
+          `/my-request-posts?email=${user?.email}`
         );
         setMyRequestPosts(data);
       } catch (error) {
@@ -65,9 +62,7 @@ const ManageMyPosts = () => {
       confirmButtonText: "Yes, delete it!",
     }).then(async (result) => {
       if (result.isConfirmed) {
-        const { data } = await axiosSecure.delete(
-          `/my-post/${id}`
-        );
+        const { data } = await axiosSecure.delete(`/my-post/${id}`);
         if (data.deletedCount > 0) {
           Swal.fire({
             title: "Deleted!",
@@ -77,12 +72,6 @@ const ManageMyPosts = () => {
           const remainingPosts = myPosts.filter((post) => post._id !== id);
           setMyPosts(remainingPosts);
         }
-      } else {
-        Swal.fire({
-          title: "Error",
-          text: "Somthing went wrong, try again.",
-          icon: "error",
-        });
       }
     });
   };
@@ -97,9 +86,7 @@ const ManageMyPosts = () => {
       confirmButtonText: "Yes, delete it!",
     }).then(async (result) => {
       if (result.isConfirmed) {
-        const { data } = await axiosSecure.delete(
-          `/my-request-post/${id}`
-        );
+        const { data } = await axiosSecure.delete(`/my-request-post/${id}`);
         if (data.deletedCount > 0) {
           Swal.fire({
             title: "Deleted!",
@@ -111,12 +98,6 @@ const ManageMyPosts = () => {
           );
           setMyRequestPosts(remainingRequestPosts);
         }
-      } else {
-        Swal.fire({
-          title: "Error",
-          text: "Somthing went wrong, try again.",
-          icon: "error",
-        });
       }
     });
   };
@@ -126,10 +107,10 @@ const ManageMyPosts = () => {
   }
 
   return (
-    <div className="my-16">
+    <div className="my-16 max-w-7xl px-2 mx-auto">
       {!myPosts || myPosts.length === 0 ? (
         <div className="min-h-[60vh]">
-          <h1 className="text-4xl text-green-600 inline-block shadow-lg p-3 drop-shadow-xl font-bold up border-l-8 border-green-500 pl-3 mb-8">
+          <h1 className="text-4xl text-green-600 dark:shadow-white/10 inline-block shadow-lg p-3 drop-shadow-xl font-bold up border-l-8 border-green-500 pl-3 mb-8">
             My Posts
           </h1>
           <p className="text-3xl font-semibold text-center text-red-400">
@@ -139,7 +120,7 @@ const ManageMyPosts = () => {
       ) : (
         <div className="mb-16">
           <div className="flex items-center flex-col md:flex-row justify-between">
-            <h1 className="text-4xl text-green-600 inline-block shadow-lg p-3 drop-shadow-xl font-bold up border-l-8 border-green-500 pl-3 mb-8">
+            <h1 className="text-4xl text-green-600 dark:shadow-white/10 inline-block shadow-lg p-3 drop-shadow-xl font-bold up border-l-8 border-green-500 pl-3 mb-8">
               My Posts
               <span className="badge badge-success text-white badge-lg drop-shadow-lg w-10 h-10 relative bottom-2 ml-2">
                 {myPosts.length}
@@ -160,7 +141,10 @@ const ManageMyPosts = () => {
               </thead>
               <tbody>
                 {myPosts.map((post) => (
-                  <tr key={post._id} className="hover shadow-md border">
+                  <tr
+                    key={post._id}
+                    className="dark:hover:bg-[#0e141a] shadow-md dark:bg-[#141c24] hover:bg-[#eceaea]"
+                  >
                     <th>
                       <img
                         className="w-52 h-32 rounded-lg object-cover"
@@ -203,7 +187,7 @@ const ManageMyPosts = () => {
       {/* My post request */}
       {!myRequestPosts || myRequestPosts.length === 0 ? (
         <div className="min-h-[60vh]">
-          <h1 className="text-4xl text-green-600 inline-block shadow-lg p-3 drop-shadow-xl font-bold up border-l-8 border-green-500 pl-3 mb-8">
+          <h1 className="text-4xl text-green-600 dark:shadow-white/10 inline-block shadow-lg p-3 drop-shadow-xl font-bold up border-l-8 border-green-500 pl-3 mb-8">
             My Volunteer Request Post
           </h1>
           <p className="text-3xl font-semibold text-center text-red-400">
@@ -213,7 +197,7 @@ const ManageMyPosts = () => {
       ) : (
         <div>
           <div className="flex items-center flex-col md:flex-row justify-between">
-            <h1 className="text-4xl text-green-600 inline-block shadow-lg p-3 drop-shadow-xl font-bold up border-l-8 border-green-500 pl-3 mb-8">
+            <h1 className="text-4xl text-green-600 dark:shadow-white/10 inline-block shadow-lg p-3 drop-shadow-xl font-bold up border-l-8 border-green-500 pl-3 mb-8">
               My Volunteer Request Post
               <span className="badge badge-success text-white badge-lg drop-shadow-lg w-10 h-10 relative bottom-2 ml-2">
                 {myRequestPosts.length}
@@ -234,7 +218,10 @@ const ManageMyPosts = () => {
               </thead>
               <tbody>
                 {myRequestPosts.map((post) => (
-                  <tr key={post._id} className="hover shadow-md border">
+                  <tr
+                    key={post._id}
+                    className="dark:hover:bg-[#0e141a] shadow-md dark:bg-[#141c24] hover:bg-[#eceaea]"
+                  >
                     <th>
                       <img
                         className="w-52 h-32 rounded-lg object-cover"

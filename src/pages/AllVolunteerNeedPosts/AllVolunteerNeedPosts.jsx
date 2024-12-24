@@ -25,11 +25,11 @@ const AllVolunteerNeedPosts = () => {
   };
 
   return (
-    <div className="my-16">
+    <div className="my-16 max-w-7xl px-2 mx-auto">
       <div className="flex items-center flex-col md:flex-row justify-between">
-        <h1 className="text-4xl text-green-600 inline-block shadow-lg p-3 drop-shadow-xl font-bold up border-l-8 border-green-500 pl-3 mb-8">
+        <h1 className="text-4xl text-green-600 dark:shadow-white/10 inline-block shadow-lg p-3 drop-shadow-xl font-bold up border-l-8 border-green-500 pl-3 mb-8">
           All Volunteer Need Posts
-          <span className="badge badge-success text-white badge-lg relative bottom-7 -right-7 drop-shadow-lg w-10 h-10">
+          <span className="badge badge-success text-white badge-lg drop-shadow-lg w-10 h-10 relative bottom-2 ml-2">
             {posts.length}
           </span>
         </h1>
@@ -54,7 +54,7 @@ const AllVolunteerNeedPosts = () => {
               className="grow"
               placeholder="Search"
             />
-            <FaSearch />
+            <FaSearch className="text-gray-500" />
           </label>
         </div>
       </div>
@@ -80,7 +80,7 @@ const AllVolunteerNeedPosts = () => {
             </thead>
             <tbody>
               {posts.map((post) => (
-                <tr key={post._id} className="hover shadow-md">
+                <tr key={post._id} className="dark:hover:bg-[#0e141a] shadow-md dark:bg-[#141c24] hover:bg-[#eceaea]">
                   <th>
                     <img
                       className="w-52 h-32 rounded-lg object-cover"
@@ -99,7 +99,7 @@ const AllVolunteerNeedPosts = () => {
                   </td>
                   <td>
                     <Link
-                      className="btn bg-green-500 text-white hover:bg-green-600 transition-colors"
+                      className="btn border-none bg-green-500 text-white hover:bg-green-600 transition-colors"
                       to={`/volunteer-need-post-details/${post._id}`}
                     >
                       View Details

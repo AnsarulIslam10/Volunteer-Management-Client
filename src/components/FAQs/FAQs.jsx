@@ -4,7 +4,7 @@ import Lottie from "lottie-react";
 const FAQs = () => {
   return (
     <div className="mb-16">
-      <h1 className="text-4xl text-green-600 inline-block shadow-lg p-3 drop-shadow-xl font-bold up border-l-8 border-green-500 pl-3 mb-8">
+      <h1 className="text-4xl text-green-600 dark:shadow-white/10 inline-block shadow-lg p-3 drop-shadow-xl font-bold up border-l-8 border-green-500 pl-3 mb-8">
         Frequently asked questions
       </h1>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-3 items-center">
@@ -12,7 +12,7 @@ const FAQs = () => {
           <Lottie animationData={faq}></Lottie>
         </div>
         <div className="space-y-3">
-          <div className="collapse collapse-arrow bg-base-200">
+          <div className="collapse dark:bg-[#1a242e] collapse-arrow bg-base-200">
             <input type="radio" name="my-accordion-2" defaultChecked />
             <div className="collapse-title text-xl font-medium">
               How can I volunteer for a post?
@@ -24,7 +24,7 @@ const FAQs = () => {
               </p>
             </div>
           </div>
-          <div className="collapse collapse-arrow bg-base-200">
+          <div className="collapse dark:bg-[#1a242e] collapse-arrow bg-base-200">
             <input type="radio" name="my-accordion-2" />
             <div className="collapse-title text-xl font-medium">
               Do I need prior experience to volunteer?
@@ -33,7 +33,7 @@ const FAQs = () => {
               <p>No, most posts welcome volunteers of all experience levels.</p>
             </div>
           </div>
-          <div className="collapse collapse-arrow bg-base-200">
+          <div className="collapse dark:bg-[#1a242e] collapse-arrow bg-base-200">
             <input type="radio" name="my-accordion-2" />
             <div className="collapse-title text-xl font-medium">
               How do I create a post for volunteers?
@@ -46,7 +46,7 @@ const FAQs = () => {
               </p>
             </div>
           </div>
-          <div className="collapse collapse-arrow bg-base-200">
+          <div className="collapse dark:bg-[#1a242e] collapse-arrow bg-base-200">
             <input type="radio" name="my-accordion-2" />
             <div className="collapse-title text-xl font-medium">
               Can I cancel my request or post?
@@ -58,7 +58,7 @@ const FAQs = () => {
               </p>
             </div>
           </div>
-          <div className="collapse collapse-arrow bg-base-200">
+          <div className="collapse dark:bg-[#1a242e] collapse-arrow bg-base-200">
             <input type="radio" name="my-accordion-2" />
             <div className="collapse-title text-xl font-medium">
               What happens if a post reaches the required number of volunteers?

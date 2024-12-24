@@ -6,7 +6,7 @@ import { Tooltip } from "react-tooltip";
 import "react-tooltip/dist/react-tooltip.css";
 const MainLayout = () => {
   return (
-    <div className="max-w-7xl px-2 mx-auto">
+    <div className="dark:bg-[#181818] dark:text-[#e0e0e0] mx-auto">
       <Tooltip id="my-tooltip" className="z-10" />
       <Navbar></Navbar>
       <div className="min-h-[calc(100vh-288px)]">
