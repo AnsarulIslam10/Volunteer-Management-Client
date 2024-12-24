@@ -52,10 +52,10 @@ const Modal = ({ post }) => {
         `${import.meta.env.VITE_API_URL}/volunteer-request`,
         volunteerInfo
       );
-
       toast.success("Request added successfully");
+      
     } catch (error) {
-      toast.error("An error occured while submitting the request");
+      toast.error(error.response.data);
     }
   };
 

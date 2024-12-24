@@ -65,8 +65,8 @@ const ManageMyPosts = () => {
       confirmButtonText: "Yes, delete it!",
     }).then(async (result) => {
       if (result.isConfirmed) {
-        const { data } = await axios.delete(
-          `${import.meta.env.VITE_API_URL}/my-post/${id}`
+        const { data } = await axiosSecure.delete(
+          `/my-post/${id}`
         );
         if (data.deletedCount > 0) {
           Swal.fire({
