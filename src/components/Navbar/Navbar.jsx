@@ -56,8 +56,8 @@ const Navbar = () => {
       </li>
       <li>
         <details>
-          <summary>My Profile</summary>
-          <ul className="p-2 w-24 md:w-52 z-10 rounded-md bg-gray-200 dark:bg-[#181818] dark:text-[#e0e0e0] text-black backdrop-blur-sm">
+          <summary className="w-[80%] md:w-auto">My Profile</summary>
+          <ul className="p-2 w-24 sm:w-44 lg:w-52 relative right-5 z-10 rounded-md dark:bg-[#181818] dark:text-[#e0e0e0] text-black backdrop-blur-sm">
             <li className="hover:dark:bg-[#222222]">
               <NavLink
                 to={"/add-volunteer-need-post"}
@@ -101,16 +101,17 @@ const Navbar = () => {
             </div>
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content dark:bg-[#181818] rounded-box z-[1] mt-3 w-52 p-2 shadow"
+              className="menu menu-sm dropdown-content bg-white dark:bg-[#181818] rounded-box z-[1] mt-3 w-52 p-2 shadow"
             >
               {links}
             </ul>
           </div>
           <Link
             to={"/"}
-            className="cursor-pointer text-3xl tracking-widest text-green-500 font-bold uppercase "
+            className="cursor-pointer text-3xl tracking-widest text-green-500 font-bold flex items-center gap-2 uppercase "
           >
-            <FaHands className="text-4xl"/>
+            {<FaHands className="text-4xl block md:hidden"/>}
+             <span className="hidden md:block">Volunary</span>
           </Link>
         </div>
         <div className="navbar-center hidden lg:flex">

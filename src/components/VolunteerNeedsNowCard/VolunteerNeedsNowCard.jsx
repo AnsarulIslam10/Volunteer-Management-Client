@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import moment from "moment";
-const PostCard = ({ post }) => {
-  const { _id, thumbnail, title, category, deadline, volunteersNumber } = post;
+const VolunteerNeedsNowCard = ({ post }) => {
+  const { _id, thumbnail, title, category, deadline } = post;
   return (
     <div className="bg-white flex flex-col justify-center dark:bg-[#1a242e] rounded-lg shadow-lg overflow-hidden">
       <img
@@ -24,17 +24,8 @@ const PostCard = ({ post }) => {
             {moment(deadline).format("DD/MM/YYYY")}
           </span>
         </p>
-        {volunteersNumber <= 0 ? (
-          <p className="text-sm text-green-500 mb-4">Recruitment Closed</p>
-        ) : (
-          <p className="text-sm dark:text-[#e0e0e0] text-gray-500 mb-4">
-            Vlounteer Needs:{" "}
-            <span className="text-green-500 font-semibold">
-              {volunteersNumber}
-            </span>
-          </p>
-        )}
       </div>
+
       <div className="p-4">
         <Link
           className="btn border-none bg-green-500 text-white hover:bg-green-600 transition-colors"
@@ -47,4 +38,4 @@ const PostCard = ({ post }) => {
   );
 };
 
-export default PostCard;
+export default VolunteerNeedsNowCard;

@@ -48,7 +48,7 @@ const Slider = () => {
             </p>
             <div>
               <Link
-                to={"/all-volunteer-need-post"}
+                to={"/all-volunteer-need-posts"}
                 className="btn btn-xs px-1 sm:px-3 sm:btn-sm md:btn-md border-green-600 text-green-600 btn-outline mt-2 rounded-none hover:bg-green-700"
               >
                 Become a volunteer
@@ -57,7 +57,7 @@ const Slider = () => {
           </div>
         </SwiperSlide>
         <SwiperSlide className="relative">
-          <img className="object-cover w-full" src={slider1} />
+          <img className="object-cover w-full" src={slider2} />
           <div
             className="absolute top-0 w-full h-full text-start flex flex-col justify-center pl-20
            p-12 text-white bg-black bg-opacity-50"
@@ -73,7 +73,7 @@ const Slider = () => {
             </p>
             <div>
               <Link
-                to={"/all-volunteer-need-post"}
+                to={"/all-volunteer-need-posts"}
                 className="btn btn-xs px-1 sm:px-3 sm:btn-sm md:btn-md border-green-600 text-green-600 btn-outline mt-2 rounded-none hover:bg-green-700"
               >
                 Become a volunteer
@@ -82,7 +82,7 @@ const Slider = () => {
           </div>
         </SwiperSlide>
         <SwiperSlide className="relative">
-          <img className="object-cover w-full" src={slider1} />
+          <img className="object-cover w-full" src={slider3} />
           <div
             className="absolute top-0 w-full h-full text-start flex flex-col justify-center pl-20
            p-12 text-white bg-black bg-opacity-50"
@@ -98,7 +98,7 @@ const Slider = () => {
             </p>
             <div>
               <Link
-                to={"/all-volunteer-need-post"}
+                to={"/all-volunteer-need-posts"}
                 className="btn btn-xs px-1 sm:px-3 sm:btn-sm md:btn-md border-green-600 text-green-600 btn-outline mt-2 rounded-none hover:bg-green-700"
               >
                 Become a volunteer

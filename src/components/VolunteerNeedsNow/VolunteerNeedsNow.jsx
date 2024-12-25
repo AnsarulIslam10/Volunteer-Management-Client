@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { FaArrowRight } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import PostCard from "../PostCard/PostCard";
+import VolunteerNeedsNowCard from "../VolunteerNeedsNowCard/VolunteerNeedsNowCard";
 
 const VolunteerNeedsNow = () => {
   const [posts, setPosts] = useState([])
@@ -23,7 +24,7 @@ const VolunteerNeedsNow = () => {
       </h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
         {
-          posts.map(post => <PostCard key={post._id} post={post}></PostCard>)
+          posts.map(post => <VolunteerNeedsNowCard key={post._id} post={post}></VolunteerNeedsNowCard>)
         }     
       </div>
 
