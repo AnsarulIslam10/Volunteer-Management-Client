@@ -5,6 +5,7 @@ import { FaBars, FaSearch, FaTh } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import moment from "moment";
 import { Helmet } from "react-helmet-async";
+import { Slide, Zoom } from "react-awesome-reveal";
 
 const AllVolunteerNeedPosts = () => {
   const [posts, setPosts] = useState([]);
@@ -30,42 +31,48 @@ const AllVolunteerNeedPosts = () => {
         <title>Volunary | All Volunteer Need Posts</title>
       </Helmet>
       <div className="flex items-center flex-col lg:flex-row justify-between">
-        <h1 className="sm:text-2xl md:text-4xl text-green-600 dark:shadow-white/10 inline-block shadow-lg p-3 drop-shadow-xl font-bold up border-l-8 border-green-500 pl-3 mb-8">
-          All Volunteer Need Posts
-          <span className="badge badge-success text-white badge-lg drop-shadow-lg w-6 h-6 sm:w-8 sm:h-8  relative sm:bottom-1 md:bottom-2 ml-2">
-            {posts.length}
-          </span>
-        </h1>
-        <div className="flex items-center gap-4">
-          <div className="flex justify-end text-3xl gap-3 mb-3 text-gray-600">
-            <button onClick={toggleView}>
-              <FaTh
-                className={`${viewMode === "grid" ? "text-blue-400" : ""}`}
+        <Slide triggerOnce>
+          <h1 className="sm:text-2xl md:text-4xl text-green-600 dark:shadow-white/10 inline-block shadow-lg p-3 drop-shadow-xl font-bold up border-l-8 border-green-500 pl-3 mb-8">
+            All Volunteer Need Posts
+            <span className="badge badge-success text-white badge-lg drop-shadow-lg w-6 h-6 sm:w-8 sm:h-8  relative sm:bottom-1 md:bottom-2 ml-2">
+              {posts.length}
+            </span>
+          </h1>
+        </Slide>
+        <Slide triggerOnce direction="right">
+          <div className="flex items-center gap-4">
+            <div className="flex justify-end text-3xl gap-3 mb-3 text-gray-600">
+              <button onClick={toggleView}>
+                <FaTh
+                  className={`${viewMode === "grid" ? "text-blue-400" : ""}`}
+                />
+              </button>
+              <button onClick={toggleView}>
+                <FaBars
+                  className={`${viewMode === "table" ? "text-blue-400" : ""}`}
+                />
+              </button>
+            </div>
+            <label className="input input-bordered flex items-center mb-4 gap-2">
+              <input
+                type="text"
+                onChange={(e) => setSearch(e.target.value)}
+                value={search}
+                className="grow text-black"
+                placeholder="Search"
               />
-            </button>
-            <button onClick={toggleView}>
-              <FaBars
-                className={`${viewMode === "table" ? "text-blue-400" : ""}`}
-              />
-            </button>
+              <FaSearch className="text-gray-500" />
+            </label>
           </div>
-          <label className="input input-bordered flex items-center mb-4 gap-2">
-            <input
-              type="text"
-              onChange={(e) => setSearch(e.target.value)}
-              value={search}
-              className="grow text-black"
-              placeholder="Search"
-            />
-            <FaSearch className="text-gray-500" />
-          </label>
-        </div>
+        </Slide>
       </div>
 
       {viewMode === "grid" ? (
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
           {posts.map((post) => (
-            <PostCard key={post._id} post={post}></PostCard>
+            <Zoom key={post._id} triggerOnce>
+              <PostCard post={post}></PostCard>
+            </Zoom>
           ))}
         </div>
       ) : (

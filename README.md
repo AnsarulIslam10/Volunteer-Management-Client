@@ -49,6 +49,7 @@ To simplify volunteer coordination and provide a centralized platform to manage 
 - `react`
 - `react-datepicker`
 - `react-dom`
+- `react-awesome-reveal`
 - `react-helmet-async`
 - `react-icons`
 - `react-router-dom`

@@ -4,7 +4,7 @@ import moment from "moment";
 const VolunteerNeedsNowCard = ({ post }) => {
   const { _id, thumbnail, title, category, deadline } = post;
   return (
-    <div className="bg-white flex flex-col justify-center dark:bg-[#1a242e] rounded-lg shadow-lg overflow-hidden">
+    <div className="bg-white hover:scale-105 transition-all duration-300 h-[100%] flex flex-col justify-center dark:bg-[#1a242e] rounded-lg shadow-lg overflow-hidden">
       <img
         className="w-full h-48 rounded-t-lg object-cover"
         src={thumbnail}
