@@ -5,10 +5,12 @@ import { AuthContext } from "../../provider/AuthProvider";
 import { toast } from "react-toastify";
 import useAxiosSecure from "../../hooks/useAxiosSecure";
 import { Helmet } from "react-helmet-async";
+import { useNavigate } from "react-router-dom";
 const AddVolunteerNeedPost = () => {
   const axiosSecure = useAxiosSecure();
   const [startDate, setStartDate] = useState(new Date());
   const { user } = useContext(AuthContext);
+  const navigate = useNavigate()
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -41,7 +43,7 @@ const AddVolunteerNeedPost = () => {
       await axiosSecure.post(`/add-post`, newPost);
       form.reset();
       toast.success("Post Added Successfully");
-      // navigate ===>
+      navigate('/manage-my-posts')
     } catch (error) {
       toast.error(error.message);
     }
@@ -97,13 +99,20 @@ const AddVolunteerNeedPost = () => {
               <label className="label">
                 <span className="label-text dark:text-[#e0e0e0]">Category</span>
               </label>
-              <input
-                type="text"
+              <select
+                className="select select-bordered text-black select-info w-full focus:outline-none"
                 name="category"
-                placeholder="e.g., healthcare, education, social service etc."
-                className="input text-black input-bordered w-full"
-                required
-              />
+                id=""
+              >
+                <option value="Health">Health</option>
+                <option value="Social Welfare">Social Welfare</option>
+                <option value="Environment">Environment</option>
+                <option value="Education">Education</option>
+                <option value="Disaster Relief">Disaster Relief</option>
+                <option value="Sports">Sports</option>
+                <option value="Animal Welfare">Animal Welfare</option>
+                <option value="Other">Other</option>
+              </select>
             </div>
             <div>
               <label className="label">
@@ -126,6 +135,7 @@ const AddVolunteerNeedPost = () => {
               <input
                 type="number"
                 name="volunteersNumber"
+                min="1"
                 placeholder="Enter volunteer number"
                 className="input text-black input-bordered w-full"
                 required

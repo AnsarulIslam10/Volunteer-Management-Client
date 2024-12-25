@@ -2,7 +2,6 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { FaArrowRight } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import PostCard from "../PostCard/PostCard";
 import VolunteerNeedsNowCard from "../VolunteerNeedsNowCard/VolunteerNeedsNowCard";
 
 const VolunteerNeedsNow = () => {

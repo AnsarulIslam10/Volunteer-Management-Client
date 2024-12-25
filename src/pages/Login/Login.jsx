@@ -10,7 +10,6 @@ import { errorHandler } from "../../firebase/FirebaseErrorHandler";
 import { Helmet } from "react-helmet-async";
 
 const Login = () => {
-  const { user } = useContext(AuthContext);
   const { signInUser, signInWithGoogle } = useContext(AuthContext);
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState("");

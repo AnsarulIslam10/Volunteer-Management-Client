@@ -10,7 +10,7 @@ const Modal = ({ post, fetchPostData }) => {
   const { user } = useContext(AuthContext);
   const [status, setStatus] = useState("requested");
   const [suggestion, setSuggestion] = useState("");
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const {
     _id,
     title,
@@ -26,7 +26,7 @@ const Modal = ({ post, fetchPostData }) => {
   const handleRequest = async (e) => {
     e.preventDefault();
     if (volunteersNumber <= 0) {
-      toast.error("No volunteer needed for this post");
+      toast.error("Recruitment closed for this post");
       return;
     }
     const volunteerInfo = {
@@ -53,20 +53,22 @@ const Modal = ({ post, fetchPostData }) => {
         volunteerInfo
       );
       toast.success("Request added successfully");
-      fetchPostData()
-      Modal.close()
-      
+      fetchPostData();
+      navigate('/manage-my-posts')
     } catch (error) {
-      toast.error(error.response.data || 'Something went wrong');
+      toast.error(error.response.data || "Something went wrong");
     }
   };
 
   return (
-    <dialog id="my_modal_5" className="modal-middle dark:bg-[#1a242e]  drop-shadow-2xl">
+    <dialog
+      id="my_modal_5"
+      className="modal-middle dark:bg-[#1a242e]  drop-shadow-2xl"
+    >
       <div className="md:w-[700px] mx-auto p-0">
         <form method="dialog">
           {/* if there is a button in form, it will close the modal */}
-          <button className="btn btn-sm btn-circle btn-ghost dark:text-white absolute right-2 top-2">
+          <button className="btn btn-sm btn-circle btn-ghost dark:dark:text-white absolute right-2 top-2">
             ✕
           </button>
         </form>
@@ -85,7 +87,7 @@ const Modal = ({ post, fetchPostData }) => {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
               <div>
                 <label className="label">
-                  <span className="label-text text-white">Post Title</span>
+                  <span className="label-text dark:text-white">Post Title</span>
                 </label>
                 <input
                   type="text"
@@ -98,7 +100,7 @@ const Modal = ({ post, fetchPostData }) => {
               </div>
               <div>
                 <label className="label">
-                  <span className="label-text text-white">Thumbnail</span>
+                  <span className="label-text dark:text-white">Thumbnail</span>
                 </label>
                 <input
                   type="url"
@@ -111,7 +113,7 @@ const Modal = ({ post, fetchPostData }) => {
               </div>
               <div>
                 <label className="label">
-                  <span className="label-text text-white">Category</span>
+                  <span className="label-text dark:text-white">Category</span>
                 </label>
                 <input
                   type="text"
@@ -124,7 +126,7 @@ const Modal = ({ post, fetchPostData }) => {
               </div>
               <div>
                 <label className="label">
-                  <span className="label-text text-white">Location</span>
+                  <span className="label-text dark:text-white">Location</span>
                 </label>
                 <input
                   type="text"
@@ -137,7 +139,9 @@ const Modal = ({ post, fetchPostData }) => {
               </div>
               <div>
                 <label className="label">
-                  <span className="label-text text-white">No. of volunteers needed</span>
+                  <span className="label-text dark:text-white">
+                    No. of volunteers needed
+                  </span>
                 </label>
                 <input
                   type="number"
@@ -150,7 +154,7 @@ const Modal = ({ post, fetchPostData }) => {
               </div>
               <div>
                 <label className="label">
-                  <span className="label-text text-white">Deadline</span>
+                  <span className="label-text dark:text-white">Deadline</span>
                 </label>
                 <div className="w-full">
                   <DatePicker
@@ -162,7 +166,9 @@ const Modal = ({ post, fetchPostData }) => {
               </div>
               <div>
                 <label className="label">
-                  <span className="label-text text-white">Organizer Name</span>
+                  <span className="label-text dark:text-white">
+                    Organizer Name
+                  </span>
                 </label>
                 <input
                   type="text"
@@ -176,7 +182,9 @@ const Modal = ({ post, fetchPostData }) => {
               </div>
               <div>
                 <label className="label">
-                  <span className="label-text text-white">Organizer Email</span>
+                  <span className="label-text dark:text-white">
+                    Organizer Email
+                  </span>
                 </label>
                 <input
                   type="email"
@@ -191,7 +199,7 @@ const Modal = ({ post, fetchPostData }) => {
             </div>
             <div>
               <label className="label">
-                <span className="label-text text-white">Description</span>
+                <span className="label-text dark:text-white">Description</span>
               </label>
               <textarea
                 name="description"
@@ -202,12 +210,16 @@ const Modal = ({ post, fetchPostData }) => {
                 readOnly
               ></textarea>
             </div>
-            <div className="divider divider-success dark:text-[#e0e0e0]">additional info</div>
+            <div className="divider divider-success dark:text-[#e0e0e0]">
+              additional info
+            </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
               <div>
                 <label className="label">
-                  <span className="label-text text-white">Volunteer's Name</span>
+                  <span className="label-text dark:text-white">
+                    Volunteer's Name
+                  </span>
                 </label>
                 <input
                   type="text"
@@ -221,7 +233,9 @@ const Modal = ({ post, fetchPostData }) => {
               </div>
               <div>
                 <label className="label">
-                  <span className="label-text text-white">Volunteer's Email</span>
+                  <span className="label-text dark:text-white">
+                    Volunteer's Email
+                  </span>
                 </label>
                 <input
                   type="email"
@@ -235,13 +249,13 @@ const Modal = ({ post, fetchPostData }) => {
               </div>
               <div>
                 <label className="label">
-                  <span className="label-text text-white">Suggestion</span>
+                  <span className="label-text dark:text-white">Suggestion</span>
                 </label>
                 <textarea
                   name="suggestion"
                   value={suggestion}
                   onChange={(e) => setSuggestion(e.target.value)}
-                  className="textarea w-full textarea-bordered"
+                  className="textarea w-full textarea-xs textarea-bordered"
                   placeholder="Write a suggestion"
                   required
                 ></textarea>
@@ -249,7 +263,7 @@ const Modal = ({ post, fetchPostData }) => {
 
               <div>
                 <label className="label">
-                  <span className="label-text text-white">Status</span>
+                  <span className="label-text dark:text-white">Status</span>
                 </label>
                 <input
                   type="text"

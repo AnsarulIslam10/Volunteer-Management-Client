@@ -10,7 +10,7 @@ const Testimonials = () => {
           <div className="flex justify-center pt-3">
             <img
               className="w-20 h-20 object-cover rounded-full"
-              src="https://i.ibb.co.com/VqNK2Yf/azharul-min.jpg"
+              src="https://i.ibb.co.com/L8My9q9/azharul.jpg"
               alt=""
             />
           </div>
@@ -27,7 +27,7 @@ const Testimonials = () => {
           <div className="flex justify-center pt-3">
             <img
               className="w-20 h-20 object-cover rounded-full"
-              src="https://i.ibb.co.com/bdZzzhZ/sabbir-min.jpg"
+              src="https://i.ibb.co.com/BLVmqsq/sabbir.jpg"
               alt=""
             />
           </div>
@@ -44,7 +44,7 @@ const Testimonials = () => {
           <div className="flex justify-center pt-3">
             <img
               className="w-20 h-20 object-cover rounded-full"
-              src="https://i.ibb.co.com/F7VTqCL/istiak-min.jpg"
+              src="https://i.ibb.co.com/4sGM8d7/istiak.jpg"
               alt=""
             />
           </div>

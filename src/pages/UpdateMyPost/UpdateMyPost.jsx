@@ -110,14 +110,23 @@ const UpdateMyPost = () => {
               <label className="label">
                 <span className="label-text dark:text-[#e0e0e0]">Category</span>
               </label>
-              <input
-                type="text"
-                defaultValue={post?.category}
-                name="category"
-                placeholder="Enter category"
-                className="input input-bordered text-black w-full"
-                required
-              />
+              {post?.category && (
+                <select
+                  className="select select-bordered text-black select-info w-full focus:outline-none"
+                  name="category"
+                  defaultValue={post?.category}
+                  id=""
+                >
+                  <option value="Health">Health</option>
+                  <option value="Social Welfare">Social Welfare</option>
+                  <option value="Environment">Environment</option>
+                  <option value="Education">Education</option>
+                  <option value="Disaster Relief">Disaster Relief</option>
+                  <option value="Sports">Sports</option>
+                  <option value="Animal Welfare">Animal Welfare</option>
+                  <option value="Other">Other</option>
+                </select>
+              )}
             </div>
             <div>
               <label className="label">
@@ -141,6 +150,7 @@ const UpdateMyPost = () => {
               <input
                 type="number"
                 name="volunteersNumber"
+                min="1"
                 defaultValue={post?.volunteersNumber}
                 placeholder="Enter volunteer number"
                 className="input input-bordered text-black w-full"
