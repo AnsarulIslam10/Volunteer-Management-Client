@@ -164,7 +164,7 @@ const Navbar = () => {
               </div>
               <button
                 onClick={handleLogOut}
-                className="btn btn-sm md:btn-md border-none rounded-md bg-green-500 text-white font-semibold text-lg"
+                className="btn btn-sm md:btn-md border-none rounded-full bg-green-500 text-white font-semibold text-lg"
               >
                 Log Out
               </button>
@@ -172,7 +172,7 @@ const Navbar = () => {
           ) : (
             <Link
               to={"/login"}
-              className="btn border-none bg-green-500 text-white font-semibold text-lg"
+              className="btn border-none rounded-full bg-green-500 text-white font-semibold text-lg"
             >
               Login
             </Link>
