@@ -12,22 +12,22 @@ const PostCard = ({ post }) => {
       />
       <div className="p-4">
         <h2 className="text-2xl font-semibold mb-2">{title}</h2>
-        <p className="text-sm text-gray-500 mb-2">
+        <p className="text-sm text-gray-500 dark:text-[#e0e0e0] mb-2">
           Category:{" "}
-          <span className="text-gray-700 font-semibold">{category}</span>
+          <span className="text-gray-700 dark:text-[#c0bebe] font-semibold">{category}</span>
         </p>
-        <p className="text-sm text-gray-500 mb-2">
+        <p className="text-sm text-gray-500 dark:text-[#e0e0e0] mb-2">
           Deadline:{" "}
-          <span className="text-gray-500 font-semibold">
+          <span className="text-gray-500 dark:text-[#c0bebe] font-semibold">
             {moment(deadline).format("DD/MM/YYYY")}
           </span>
         </p>
         {
           volunteersNumber <= 0 ? <p className="text-sm text-green-500 mb-4">
           Recruitment Closed
-        </p> : <p className="text-sm text-gray-500 mb-4">
+        </p> : <p className="text-sm dark:text-[#e0e0e0] text-gray-500 mb-4">
           Vlounteer Needs:{" "}
-          <span className='"text-gray-500 font-semibold'>
+          <span className='text-green-500 font-semibold'>
             {volunteersNumber}
           </span>
         </p>

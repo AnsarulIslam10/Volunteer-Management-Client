@@ -78,6 +78,7 @@ const AllVolunteerNeedPosts = () => {
                 <th>Title</th>
                 <th>Category</th>
                 <th>Deadline</th>
+                <th>Volunteer Need</th>
                 <th>Action</th>
               </tr>
             </thead>
@@ -102,6 +103,19 @@ const AllVolunteerNeedPosts = () => {
                   </td>
                   <td className="text-gray-500">
                     {moment(post.deadline).format("DD/MM/YYYY")}
+                  </td>
+                  <td className="text-green-500 text-center">
+                    {post.volunteersNumber <= 0 ? (
+                      <p className="text-sm text-green-500 mb-4">
+                        Recruitment Closed
+                      </p>
+                    ) : (
+                      <p className="text-sm dark:text-[#e0e0e0] text-gray-500 mb-4">
+                        <span className="text-green-500 font-semibold">
+                          {post.volunteersNumber}
+                        </span>
+                      </p>
+                    )}
                   </td>
                   <td>
                     <Link
