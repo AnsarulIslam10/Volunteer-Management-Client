@@ -9,6 +9,7 @@ import Swal from "sweetalert2";
 import { FcCancel } from "react-icons/fc";
 import { toast } from "react-toastify";
 import useAxiosSecure from "../../hooks/useAxiosSecure";
+import { Helmet } from "react-helmet-async";
 
 const ManageMyPosts = () => {
   const axiosSecure = useAxiosSecure();
@@ -81,9 +82,10 @@ const ManageMyPosts = () => {
       text: "You won't be able to revert this!",
       icon: "warning",
       showCancelButton: true,
+      cancelButtonText: "No",
       confirmButtonColor: "#3085d6",
       cancelButtonColor: "#d33",
-      confirmButtonText: "Yes, delete it!",
+      confirmButtonText: "Yes, Cancel Request!",
     }).then(async (result) => {
       if (result.isConfirmed) {
         const { data } = await axiosSecure.delete(`/my-request-post/${id}`);
@@ -108,10 +110,13 @@ const ManageMyPosts = () => {
 
   return (
     <div className="my-16 max-w-7xl px-2 mx-auto">
+      <Helmet>
+        <title>Volunary | Manage My Posts</title>
+      </Helmet>
       {!myPosts || myPosts.length === 0 ? (
         <div className="min-h-[60vh]">
           <h1 className="sm:text-2xl md:text-4xl text-green-600 dark:shadow-white/10 inline-block shadow-lg p-3 drop-shadow-xl font-bold up border-l-8 border-green-500 pl-3 mb-8">
-            My Posts
+            My Volunteer Need Post
           </h1>
           <p className="text-3xl font-semibold text-center text-red-400">
             No Post found.
@@ -121,7 +126,7 @@ const ManageMyPosts = () => {
         <div className="mb-16">
           <div>
             <h1 className="sm:text-2xl md:text-4xl text-green-600 dark:shadow-white/10 inline-block shadow-lg p-3 drop-shadow-xl font-bold up border-l-8 border-green-500 pl-3 mb-8">
-              My Posts
+              My Volunteer Need Post
               <span className="badge badge-success text-white badge-lg drop-shadow-lg w-6 h-6 sm:w-8 sm:h-8  relative sm:bottom-1 md:bottom-2 ml-2">
                 {myPosts.length}
               </span>
@@ -183,7 +188,6 @@ const ManageMyPosts = () => {
         </div>
       )}
 
-      <div className="divider mb-16"></div>
       {/* My post request */}
       {!myRequestPosts || myRequestPosts.length === 0 ? (
         <div className="min-h-[60vh]">
@@ -212,7 +216,7 @@ const ManageMyPosts = () => {
                   <th>Thumbnail</th>
                   <th>Title</th>
                   <th>Category</th>
-                  <th>Deadline</th>
+                  <th>Status</th>
                   <th>Action</th>
                 </tr>
               </thead>
@@ -235,9 +239,7 @@ const ManageMyPosts = () => {
                     <td className="text-gray-500 font-semibold">
                       {post.category}
                     </td>
-                    <td className="text-gray-500">
-                      {moment(post.deadline).format("DD/MM/YYYY")}
-                    </td>
+                    <td className="text-green-500">{post.status}</td>
                     <td className="text-2xl space-x-3">
                       <button
                         onClick={() => handleCancel(post._id)}

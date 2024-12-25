@@ -4,26 +4,25 @@ import { AuthContext } from "../../provider/AuthProvider";
 import { useNavigate, useParams } from "react-router-dom";
 import { toast } from "react-toastify";
 import useAxiosSecure from "../../hooks/useAxiosSecure";
+import { Helmet } from "react-helmet-async";
 
 const UpdateMyPost = () => {
-  const axiosSecure = useAxiosSecure()
+  const axiosSecure = useAxiosSecure();
   const { user } = useContext(AuthContext);
   const { id } = useParams();
-  const [post, setPost] = useState([])
-  const navigate = useNavigate()
+  const [post, setPost] = useState([]);
+  const navigate = useNavigate();
   const [startDate, setStartDate] = useState(new Date());
   useEffect(() => {
-    fetchMyPost()
+    fetchMyPost();
   }, [id]);
   const fetchMyPost = async () => {
-    const { data } = await axiosSecure.get(
-      `/update-my-post/${id}`
-    );
-    setPost(data)
-    setStartDate(new Date(data.deadline))
+    const { data } = await axiosSecure.get(`/update-my-post/${id}`);
+    setPost(data);
+    setStartDate(new Date(data.deadline));
   };
 
-  const handleUpdate = async(e) => {
+  const handleUpdate = async (e) => {
     e.preventDefault();
     const form = e.target;
     const title = form.title.value;
@@ -37,39 +36,41 @@ const UpdateMyPost = () => {
     const description = form.description.value;
 
     const formData = {
-        title,
-        thumbnail,
-        category,
-        location,
-        volunteersNumber,
-        deadline,
-        organizer: {
-            organizerName,
-            organizerEmail
-        },
-        description,
-      };
+      title,
+      thumbnail,
+      category,
+      location,
+      volunteersNumber,
+      deadline,
+      organizer: {
+        organizerName,
+        organizerEmail,
+      },
+      description,
+    };
 
-      try {
-        await axiosSecure.put(
-          `/update-my-post/${id}`,
-          formData
-        )
-        form.reset()
-        toast.success('Post Updated Successfully!!!')
-        navigate('/manage-my-posts')
-      } catch (err) {
-        toast.error(err.message)
-      }
+    try {
+      await axiosSecure.put(`/update-my-post/${id}`, formData);
+      form.reset();
+      toast.success("Post Updated Successfully!!!");
+      navigate("/manage-my-posts");
+    } catch (err) {
+      toast.error(err.message);
+    }
   };
   return (
     <div className="min-h-screen max-w-7xl mx-auto px-2 flex flex-col items-center justify-center py-10">
+      <Helmet>
+        <title>Volunary | Update My Post</title>
+      </Helmet>
       <div className="shadow-xl dark:bg-[#1a242e] dark:text-white rounded-lg p-4 sm:p-6 md:p-8 w-full max-w-4xl">
         <div className="text-center mb-10">
           <h2 className="sm:text-2xl text-xl md:text-4xl font-bold text-gray-700 dark:text-[#e0e0e0] mb-2">
             Update Volunteer Need Post
           </h2>
-          <p className="text-gray-500 text-xs sm:text-sm dark:text-[#e0e0e0] max-w-md mx-auto">Update your post</p>
+          <p className="text-gray-500 text-xs sm:text-sm dark:text-[#e0e0e0] max-w-md mx-auto">
+            Update your post
+          </p>
         </div>
 
         {/* form */}
@@ -77,7 +78,9 @@ const UpdateMyPost = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6">
             <div>
               <label className="label">
-                <span className="label-text dark:text-[#e0e0e0]">Post Title</span>
+                <span className="label-text dark:text-[#e0e0e0]">
+                  Post Title
+                </span>
               </label>
               <input
                 type="text"
@@ -90,7 +93,9 @@ const UpdateMyPost = () => {
             </div>
             <div>
               <label className="label">
-                <span className="label-text dark:text-[#e0e0e0]">Thumbnail</span>
+                <span className="label-text dark:text-[#e0e0e0]">
+                  Thumbnail
+                </span>
               </label>
               <input
                 type="url"
@@ -129,7 +134,9 @@ const UpdateMyPost = () => {
             </div>
             <div>
               <label className="label">
-                <span className="label-text dark:text-[#e0e0e0]">No. of volunteers needed</span>
+                <span className="label-text dark:text-[#e0e0e0]">
+                  No. of volunteers needed
+                </span>
               </label>
               <input
                 type="number"
@@ -154,7 +161,9 @@ const UpdateMyPost = () => {
             </div>
             <div>
               <label className="label">
-                <span className="label-text dark:text-[#e0e0e0]">Organizer Name</span>
+                <span className="label-text dark:text-[#e0e0e0]">
+                  Organizer Name
+                </span>
               </label>
               <input
                 type="text"
@@ -168,7 +177,9 @@ const UpdateMyPost = () => {
             </div>
             <div>
               <label className="label">
-                <span className="label-text dark:text-[#e0e0e0]">Organizer Email</span>
+                <span className="label-text dark:text-[#e0e0e0]">
+                  Organizer Email
+                </span>
               </label>
               <input
                 type="email"
@@ -183,7 +194,9 @@ const UpdateMyPost = () => {
           </div>
           <div>
             <label className="label">
-              <span className="label-text dark:text-[#e0e0e0]">Description</span>
+              <span className="label-text dark:text-[#e0e0e0]">
+                Description
+              </span>
             </label>
             <textarea
               name="description"
@@ -199,7 +212,7 @@ const UpdateMyPost = () => {
             type="submit"
             className="bg-green-500 mt-4 text-lg text-white w-full py-3 rounded-md hover:bg-green-600 transition"
           >
-            Update
+            Update Post
           </button>
         </form>
       </div>

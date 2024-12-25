@@ -51,12 +51,12 @@ const Navbar = () => {
             }`
           }
         >
-          All volunteer Need posts
+          All Volunteer Need Posts
         </NavLink>
       </li>
       <li>
         <details>
-          <summary>Profile</summary>
+          <summary>My Profile</summary>
           <ul className="p-2 w-24 md:w-52 z-10 rounded-md bg-gray-200 dark:bg-[#181818] dark:text-[#e0e0e0] text-black backdrop-blur-sm">
             <li className="hover:dark:bg-[#222222]">
               <NavLink
@@ -69,7 +69,7 @@ const Navbar = () => {
                   }`
                 }
               >
-                Add Volunteer need Post
+                Add Volunteer Need Post
               </NavLink>
             </li>
             <li className="hover:dark:bg-[#222222]">

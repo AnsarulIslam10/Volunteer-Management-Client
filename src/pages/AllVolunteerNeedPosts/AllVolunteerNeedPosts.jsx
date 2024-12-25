@@ -4,7 +4,7 @@ import PostCard from "../../components/PostCard/PostCard";
 import { FaBars, FaSearch, FaTh } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import moment from "moment";
-
+import { Helmet } from "react-helmet-async";
 
 const AllVolunteerNeedPosts = () => {
   const [posts, setPosts] = useState([]);
@@ -26,6 +26,9 @@ const AllVolunteerNeedPosts = () => {
 
   return (
     <div className="my-16 max-w-7xl px-2 mx-auto">
+      <Helmet>
+        <title>Volunary | All Volunteer Need Posts</title>
+      </Helmet>
       <div className="flex items-center flex-col lg:flex-row justify-between">
         <h1 className="sm:text-2xl md:text-4xl text-green-600 dark:shadow-white/10 inline-block shadow-lg p-3 drop-shadow-xl font-bold up border-l-8 border-green-500 pl-3 mb-8">
           All Volunteer Need Posts
@@ -51,7 +54,7 @@ const AllVolunteerNeedPosts = () => {
               type="text"
               onChange={(e) => setSearch(e.target.value)}
               value={search}
-              className="grow"
+              className="grow text-black"
               placeholder="Search"
             />
             <FaSearch className="text-gray-500" />
@@ -80,7 +83,10 @@ const AllVolunteerNeedPosts = () => {
             </thead>
             <tbody>
               {posts.map((post) => (
-                <tr key={post._id} className="dark:hover:bg-[#0e141a] shadow-md dark:bg-[#141c24] hover:bg-[#eceaea]">
+                <tr
+                  key={post._id}
+                  className="dark:hover:bg-[#0e141a] shadow-md dark:bg-[#141c24] hover:bg-[#eceaea]"
+                >
                   <th>
                     <img
                       className="w-52 h-32 rounded-lg object-cover"

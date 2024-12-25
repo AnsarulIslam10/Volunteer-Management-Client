@@ -3,6 +3,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { useParams } from "react-router-dom";
 import Modal from "../../components/Modal/Modal";
 import useAxiosSecure from "../../hooks/useAxiosSecure";
+import { Helmet } from "react-helmet-async";
 
 const VolunteerNeedPostDetails = () => {
   const axiosSecure = useAxiosSecure();
@@ -30,6 +31,9 @@ const VolunteerNeedPostDetails = () => {
 
   return (
     <div className="my-16 px-2">
+      <Helmet>
+        <title>Volunary | Volunteer Need Post Details</title>
+      </Helmet>
       <div className="max-w-5xl mx-auto border dark:border-gray-500 rounded-3xl p-4 sm:p-8 md:p-12 shadow-sm">
         <h2 className="text-4xl text-green-600 inline-block shadow-lg p-3 drop-shadow-xl font-bold up border-l-8 border-green-500 pl-3 mb-8">
           <span>{title}</span>
@@ -94,9 +98,10 @@ const VolunteerNeedPostDetails = () => {
         </div>
         <button
           onClick={() => document.getElementById("my_modal_5").showModal()}
+          disabled={volunteersNumber <= 0}
           className="btn border-none mt-6 w-full bg-green-500 text-white hover:bg-green-600 transition-all duration-300"
         >
-          Be a Volunteer
+          {volunteersNumber <= 0 ? 'Requretment Closed' : "Be a Volunteer"}
         </button>
       </div>
 

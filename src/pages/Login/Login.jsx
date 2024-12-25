@@ -2,13 +2,15 @@ import { useContext, useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import securityAnimation from "../../assets/animations/security-animation.json"
+import securityAnimation from "../../assets/animations/security-animation.json";
 import Lottie from "lottie-react";
 import { AuthContext } from "../../provider/AuthProvider";
 import { toast } from "react-toastify";
+import { errorHandler } from "../../firebase/FirebaseErrorHandler";
+import { Helmet } from "react-helmet-async";
 
 const Login = () => {
-  const {user} = useContext(AuthContext)
+  const { user } = useContext(AuthContext);
   const { signInUser, signInWithGoogle } = useContext(AuthContext);
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState("");
@@ -42,7 +44,7 @@ const Login = () => {
       })
       .catch((err) => {
         if (err && err.code) {
-          errorHandler(err)
+          errorHandler(err);
         }
       });
   };
@@ -55,13 +57,16 @@ const Login = () => {
       })
       .catch((err) => {
         if (err && err.code) {
-          errorHandler(err)
+          errorHandler(err);
         }
       });
   };
 
   return (
     <div className="flex justify-center items-center max-w-7xl mx-auto px-2 my-16 min-h-screen">
+      <Helmet>
+        <title>Volunary | Login</title>
+      </Helmet>
       <div className="w-[700px] mb-96 px-2 dark:bg-[#1a242e] flex shadow-xl rounded-2xl overflow-hidden">
         <div className="hidden sm:block w-1/2">
           <div className="flex flex-col justify-center items-center h-full">
@@ -121,7 +126,10 @@ const Login = () => {
 
             <div className="divider divider-success ">OR</div>
             <div className="flex justify-center gap-4 mb-4">
-              <a onClick={handleGoogleSignIn} className="btn w-full drop-shadow-sm border-none rounded-md hover:bg- text-xl hover:scale-105 transition-all duration-300">
+              <a
+                onClick={handleGoogleSignIn}
+                className="btn w-full drop-shadow-sm border-none rounded-md hover:bg- text-xl hover:scale-105 transition-all duration-300"
+              >
                 Login with
                 <FcGoogle />
               </a>

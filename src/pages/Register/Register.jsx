@@ -5,10 +5,12 @@ import securityAnimation2 from "../../assets/animations/security-animation2.json
 import Lottie from "lottie-react";
 import { toast } from "react-toastify";
 import { AuthContext } from "../../provider/AuthProvider";
+import { errorHandler } from "../../firebase/FirebaseErrorHandler";
+import { Helmet } from "react-helmet-async";
 const Register = () => {
   const { createUser, setUser, updateUserProfile } = useContext(AuthContext);
-  const location = useLocation()
-  const navigate = useNavigate()
+  const location = useLocation();
+  const navigate = useNavigate();
   const [error, setError] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const handleRegister = (e) => {
@@ -35,25 +37,31 @@ const Register = () => {
 
     createUser(email, password)
       .then((result) => {
-        const user = result.user
+        const user = result.user;
         setUser(user);
-        updateUserProfile({displayName: name, photoURL: photo})
+        updateUserProfile({ displayName: name, photoURL: photo });
         toast.success("Registration successfull");
-        navigate(location?.state ? location.state : "/")
+        navigate(location?.state ? location.state : "/");
       })
       .catch((err) => {
         if (err && err.code) {
-         errorHandler(err)
+          errorHandler(err);
         }
       });
   };
 
   return (
     <div className="flex justify-center items-center max-w-7xl mx-auto px-2 my-16 min-h-screen">
+      <Helmet>
+        <title>Volunary | Register</title>
+      </Helmet>
       <div className="w-[700px] mb-96 dark:bg-[#1a242e] px-2 flex shadow-xl rounded-2xl overflow-hidden">
         <div className="hidden sm:block w-1/2">
           <div className="flex flex-col justify-center items-center h-full">
-            <Lottie className="w-72" animationData={securityAnimation2}></Lottie>
+            <Lottie
+              className="w-72"
+              animationData={securityAnimation2}
+            ></Lottie>
           </div>
         </div>
 

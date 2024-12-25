@@ -4,12 +4,13 @@ import "react-datepicker/dist/react-datepicker.css";
 import { AuthContext } from "../../provider/AuthProvider";
 import { toast } from "react-toastify";
 import useAxiosSecure from "../../hooks/useAxiosSecure";
+import { Helmet } from "react-helmet-async";
 const AddVolunteerNeedPost = () => {
-  const axiosSecure = useAxiosSecure()
+  const axiosSecure = useAxiosSecure();
   const [startDate, setStartDate] = useState(new Date());
   const { user } = useContext(AuthContext);
 
-  const handleSubmit = async(e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const form = e.target;
     const title = form.title.value;
@@ -30,26 +31,27 @@ const AddVolunteerNeedPost = () => {
       volunteersNumber,
       deadline,
       organizer: {
-          organizerName,
-          organizerEmail
+        organizerName,
+        organizerEmail,
       },
       description,
     };
 
     try {
-        await axiosSecure.post(`/add-post`, newPost)
-        form.reset()
-        toast.success('Post Added Successfully')
-        // navigate ===>
+      await axiosSecure.post(`/add-post`, newPost);
+      form.reset();
+      toast.success("Post Added Successfully");
+      // navigate ===>
     } catch (error) {
-        toast.error(error.message)
+      toast.error(error.message);
     }
-
-
   };
 
   return (
     <div className="min-h-screen max-w-7xl mx-auto flex flex-col items-center justify-center py-10 px-2">
+      <Helmet>
+        <title>Volunary | Add Volunteer Need Post</title>
+      </Helmet>
       <div className="shadow-xl dark:bg-[#1a242e] dark:text-white rounded-lg p-4 sm:p-6 md:p-8 w-full max-w-4xl">
         <div className="text-center mb-10">
           <h2 className="sm:text-2xl text-xl md:text-4xl font-bold text-gray-700 dark:text-[#e0e0e0] mb-2">
@@ -65,7 +67,9 @@ const AddVolunteerNeedPost = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6">
             <div>
               <label className="label">
-                <span className="label-text dark:text-[#e0e0e0]">Post Title</span>
+                <span className="label-text dark:text-[#e0e0e0]">
+                  Post Title
+                </span>
               </label>
               <input
                 type="text"
@@ -77,7 +81,9 @@ const AddVolunteerNeedPost = () => {
             </div>
             <div>
               <label className="label">
-                <span className="label-text dark:text-[#e0e0e0]">Thumbnail</span>
+                <span className="label-text dark:text-[#e0e0e0]">
+                  Thumbnail
+                </span>
               </label>
               <input
                 type="url"
@@ -113,7 +119,9 @@ const AddVolunteerNeedPost = () => {
             </div>
             <div>
               <label className="label">
-                <span className="label-text dark:text-[#e0e0e0]">No. of volunteers needed</span>
+                <span className="label-text dark:text-[#e0e0e0]">
+                  No. of volunteers needed
+                </span>
               </label>
               <input
                 type="number"
@@ -137,7 +145,9 @@ const AddVolunteerNeedPost = () => {
             </div>
             <div>
               <label className="label">
-                <span className="label-text dark:text-[#e0e0e0]">Organizer Name</span>
+                <span className="label-text dark:text-[#e0e0e0]">
+                  Organizer Name
+                </span>
               </label>
               <input
                 type="text"
@@ -151,7 +161,9 @@ const AddVolunteerNeedPost = () => {
             </div>
             <div>
               <label className="label">
-                <span className="label-text dark:text-[#e0e0e0]">Organizer Email</span>
+                <span className="label-text dark:text-[#e0e0e0]">
+                  Organizer Email
+                </span>
               </label>
               <input
                 type="email"
@@ -166,7 +178,9 @@ const AddVolunteerNeedPost = () => {
           </div>
           <div>
             <label className="label">
-              <span className="label-text dark:text-[#e0e0e0]">Description</span>
+              <span className="label-text dark:text-[#e0e0e0]">
+                Description
+              </span>
             </label>
             <textarea
               name="description"
