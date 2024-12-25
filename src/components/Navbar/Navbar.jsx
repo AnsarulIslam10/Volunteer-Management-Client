@@ -56,7 +56,7 @@ const Navbar = () => {
       </li>
       <li>
         <details>
-          <summary className="w-[80%] md:w-auto">My Profile</summary>
+          <summary className="w-[80%] md:w-auto btn btn-sm btn-ghost rounded-none">My Profile</summary>
           <ul className="p-2 w-24 sm:w-44 lg:w-52 relative right-5 z-10 rounded-md dark:bg-[#181818] dark:text-[#e0e0e0] text-black backdrop-blur-sm">
             <li className="hover:dark:bg-[#222222]">
               <NavLink
