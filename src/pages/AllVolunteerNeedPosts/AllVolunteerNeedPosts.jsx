@@ -53,7 +53,7 @@ const AllVolunteerNeedPosts = () => {
                 />
               </button>
             </div>
-            <label className="input input-bordered flex items-center mb-4 gap-2">
+            <label className="input input-bordered rounded-full input-sm sm:input-md flex items-center mb-4 gap-2">
               <input
                 type="text"
                 onChange={(e) => setSearch(e.target.value)}

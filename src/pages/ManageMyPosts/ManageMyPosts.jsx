@@ -235,9 +235,6 @@ const ManageMyPosts = () => {
                     <td className="text-xs sm:text-base md:text-lg font-semibold">
                       {post.title}
                     </td>
-                    <td className="text-gray-500 font-semibold">
-                      {post.category}
-                    </td>
                     <td className="text-green-500">{post.status}</td>
                     <td className="text-2xl space-x-3">
                       <button

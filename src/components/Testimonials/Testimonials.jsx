@@ -3,7 +3,7 @@ import { Slide } from "react-awesome-reveal";
 const Testimonials = () => {
   return (
     <div className="mb-24">
-        <h1 className="sm:text-2xl md:text-4xl text-green-600 dark:shadow-white/10 inline-block font-bold up border-l-4 border-green-500 pl-2 mb-16">
+        <h1 className="sm:text-2xl md:text-4xl text-green-600 dark:shadow-white/10 inline-block font-bold up border-l-4 border-green-500 pl-2 mb-8 md:mb-16">
           Testimonials
         </h1>
       <div className="grid grid-cols-1 lg:grid-cols-3  gap-4 justify-items-center">
