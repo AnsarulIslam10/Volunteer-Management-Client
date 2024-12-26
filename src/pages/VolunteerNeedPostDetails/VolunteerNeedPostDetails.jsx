@@ -35,7 +35,7 @@ const VolunteerNeedPostDetails = () => {
         <title>Volunary | Volunteer Need Post Details</title>
       </Helmet>
       <div className="max-w-5xl mx-auto border dark:border-gray-500 rounded-3xl p-4 sm:p-8 md:p-12 shadow-sm">
-        <h2 className="text-4xl text-green-600 inline-block shadow-lg p-3 drop-shadow-xl font-bold up border-l-8 border-green-500 pl-3 mb-8">
+        <h2 className="text-4xl text-green-600 inline-block shadow-lg p-3 drop-shadow-xl font-bold up border-l-4 border-green-500 pl-2 mb-8">
           <span>{title}</span>
         </h2>
         <div>
@@ -59,23 +59,23 @@ const VolunteerNeedPostDetails = () => {
                 {location}
               </span>
             </p>
+            <p className="font-semibold dark:text-[#e0e0e0] text-gray-700 mb-2">
+              Deadline:{" "}
+              <span className="font-normal dark:text-[#c0bebe]  text-gray-600">
+                {moment(deadline).format("DD/MM/YYYY")}
+              </span>
+            </p>
+
             {volunteersNumber <= 0 ? (
-              <p className="text-lg text-green-500">Recruitment Closed</p>
+              <p className="text-lg font-semibold text-green-500 mb-2">Recruitment Closed</p>
             ) : (
-              <p className="font-semibold dark:text-[#e0e0e0] text-gray-700">
+              <p className="font-semibold mb-2 dark:text-[#e0e0e0] text-gray-700">
                 Volunteers Neede:{" "}
                 <span className="font-normal text-green-500">
                   {volunteersNumber}
                 </span>
               </p>
             )}
-
-            <p className="font-semibold dark:text-[#e0e0e0] text-gray-700 mb-4">
-              Deadline:{" "}
-              <span className="font-normal dark:text-[#c0bebe]  text-gray-600">
-                {moment(deadline).format("DD/MM/YYYY")}
-              </span>
-            </p>
           </div>
 
           <div>

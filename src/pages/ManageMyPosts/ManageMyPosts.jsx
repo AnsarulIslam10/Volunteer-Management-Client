@@ -91,8 +91,8 @@ const ManageMyPosts = () => {
         const { data } = await axiosSecure.delete(`/my-request-post/${id}`);
         if (data.deletedCount > 0) {
           Swal.fire({
-            title: "Deleted!",
-            text: "Your Post has been deleted.",
+            title: "Request Cancelled",
+            text: "Your volunteer request has beed cancelled",
             icon: "success",
           });
           const remainingRequestPosts = myRequestPosts.filter(
@@ -109,13 +109,13 @@ const ManageMyPosts = () => {
   }
 
   return (
-    <div className="my-16 max-w-7xl px-2 mx-auto">
+    <div className="sm:my-16 my-8 max-w-7xl px-2 mx-auto">
       <Helmet>
         <title>Volunary | Manage My Posts</title>
       </Helmet>
       {!myPosts || myPosts.length === 0 ? (
         <div className="min-h-[60vh]">
-          <h1 className="sm:text-2xl md:text-4xl text-green-600 dark:shadow-white/10 inline-block shadow-lg p-3 drop-shadow-xl font-bold up border-l-8 border-green-500 pl-3 mb-8">
+          <h1 className="sm:text-2xl md:text-4xl text-green-600 dark:shadow-white/10 inline-block font-bold up border-l-4 border-green-500 pl-2 mb-8">
             My Volunteer Need Post
           </h1>
           <p className="text-3xl font-semibold text-center text-red-400">
@@ -125,7 +125,7 @@ const ManageMyPosts = () => {
       ) : (
         <div className="mb-16">
           <div>
-            <h1 className="sm:text-2xl md:text-4xl text-green-600 dark:shadow-white/10 inline-block shadow-lg p-3 drop-shadow-xl font-bold up border-l-8 border-green-500 pl-3 mb-8">
+            <h1 className="sm:text-2xl md:text-4xl text-green-600 dark:shadow-white/10 inline-block font-bold up border-l-4 border-green-500 pl-2 mb-8">
               My Volunteer Need Post
               <span className="badge badge-success text-white badge-lg drop-shadow-lg w-6 h-6 sm:w-8 sm:h-8  relative sm:bottom-1 md:bottom-2 ml-2">
                 {myPosts.length}
@@ -191,7 +191,7 @@ const ManageMyPosts = () => {
       {/* My post request */}
       {!myRequestPosts || myRequestPosts.length === 0 ? (
         <div className="min-h-[60vh]">
-          <h1 className="sm:text-2xl md:text-4xl text-green-600 dark:shadow-white/10 inline-block shadow-lg p-3 drop-shadow-xl font-bold up border-l-8 border-green-500 pl-3 mb-8">
+          <h1 className="sm:text-2xl md:text-4xl text-green-600 dark:shadow-white/10 inline-block font-bold up border-l-4 border-green-500 pl-2 mb-8">
             My Volunteer Request Post
           </h1>
           <p className="text-3xl font-semibold text-center text-red-400">
@@ -201,7 +201,7 @@ const ManageMyPosts = () => {
       ) : (
         <div>
           <div>
-            <h1 className="sm:text-2xl md:text-4xl text-green-600 dark:shadow-white/10 inline-block shadow-lg p-3 drop-shadow-xl font-bold up border-l-8 border-green-500 pl-3 mb-8">
+            <h1 className="sm:text-2xl md:text-4xl text-green-600 dark:shadow-white/10 inline-block font-bold up border-l-4 border-green-500 pl-2 mb-8">
               My Volunteer Request Post
               <span className="badge badge-success text-white badge-lg drop-shadow-lg w-6 h-6 sm:w-8 sm:h-8  relative sm:bottom-1 md:bottom-2 ml-2">
                 {myRequestPosts.length}
@@ -215,7 +215,6 @@ const ManageMyPosts = () => {
                 <tr>
                   <th>Thumbnail</th>
                   <th>Title</th>
-                  <th>Category</th>
                   <th>Status</th>
                   <th>Action</th>
                 </tr>

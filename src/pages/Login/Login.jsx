@@ -74,7 +74,7 @@ const Login = () => {
         </div>
 
         <div className="w-full sm:w-1/2 p-8 flex flex-col justify-center ">
-          <h2 className="text-3xl tracking-wider border-l-4 border-green-600 text-green-600 font-bold pl-3 mb-6">
+          <h2 className="text-3xl tracking-wider border-l-4 border-green-600 text-green-600 font-bold pl-2 mb-6">
             LOGIN
           </h2>
 
