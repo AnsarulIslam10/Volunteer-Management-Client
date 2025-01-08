@@ -88,9 +88,9 @@ To simplify volunteer coordination and provide a centralized platform to manage 
 3. Set up Firebase and add config in `.env`
    
 5. Add **API URL** to your `.env`
-  ```
-  VITE_API_URL=https://volunteer-management-server-azure.vercel.app
-  ```
+   ```
+   VITE_API_URL=https://volunteer-management-server-azure.vercel.app
+   ```
 6. Run locally:
    ```
    npm run dev
