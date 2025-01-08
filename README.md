@@ -2,6 +2,10 @@
 ## **📖 Overview**
 A user-friendly platform to manage volunteer opportunities. Users can create, update, delete posts, and volunteer for others’ posts. This project is built with a focus on responsiveness, security, and seamless user experience.
 
+<br>
+
+![Volunteer Management](https://i.ibb.co.com/Yk6F7Ty/volunteer-ss.png)
+
 ## **🎯 Purpose**
 To simplify volunteer coordination and provide a centralized platform to manage and participate in community services.
 
