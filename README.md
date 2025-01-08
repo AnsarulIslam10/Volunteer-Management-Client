@@ -39,27 +39,40 @@ To simplify volunteer coordination and provide a centralized platform to manage 
 #### **Responsive design**
  - for mobile, tablet, and desktop.
 
-## **npm packages I used**
-
+### Dependencies
+- `@emotion/react`
 - `axios`
 - `firebase`
+- `localforage`
 - `lottie-react`
 - `match-sorter`
 - `moment`
 - `react`
+- `react-awesome-reveal`
 - `react-datepicker`
 - `react-dom`
-- `react-awesome-reveal`
 - `react-helmet-async`
 - `react-icons`
 - `react-router-dom`
 - `react-toastify`
 - `react-tooltip`
+- `sort-by`
 - `sweetalert2`
 - `swiper`
-- `cookie-parser`
-- `cors`
-- `dotenv`
-- `express`
-- `jsonwebtoken`
-- `mongodb`
+
+### DevDependencies
+- `@eslint/js`
+- `@types/react`
+- `@types/react-dom`
+- `@vitejs/plugin-react`
+- `autoprefixer`
+- `daisyui`
+- `eslint`
+- `eslint-plugin-react`
+- `eslint-plugin-react-hooks`
+- `eslint-plugin-react-refresh`
+- `globals`
+- `postcss`
+- `tailwindcss`
+- `vite`
+
