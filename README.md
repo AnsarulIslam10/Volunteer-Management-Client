@@ -1,4 +1,4 @@
-# **[Volunary | Volunteer Management Website](https://volunteer-management-7efa7.web.app)**
+# **[Volunary | Volunteer Management | Live Link🔗](https://volunteer-management-7efa7.web.app)**
 ## **📖 Overview**
 A user-friendly platform to manage volunteer opportunities. Users can create, update, delete posts, and volunteer for others’ posts. This project is built with a focus on responsiveness, security, and seamless user experience.
 
@@ -75,4 +75,24 @@ To simplify volunteer coordination and provide a centralized platform to manage 
 - `postcss`
 - `tailwindcss`
 - `vite`
+
+    ## Installation
+1. Clone the repo:
+   ```
+   git clone https://github.com/AnsarulIslam10/Chill-Gamer-Client.git
+   ```
+2. Install dependencies:
+   ```
+   npm install
+   ```
+3. Set up Firebase and add config in `.env`
+   
+5. Add **API URL** to your `.env`
+  ```
+  VITE_API_URL=https://volunteer-management-server-azure.vercel.app
+  ```
+6. Run locally:
+   ```
+   npm run dev
+   ```
 
