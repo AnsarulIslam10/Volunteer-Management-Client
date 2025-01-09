@@ -1,6 +1,10 @@
-# **[Volunary | Volunteer Management Website](https://volunteer-management-7efa7.web.app)**
+# **[Volunary | Volunteer Management | Live Link🔗](https://volunteer-management-7efa7.web.app)**
 ## **📖 Overview**
 A user-friendly platform to manage volunteer opportunities. Users can create, update, delete posts, and volunteer for others’ posts. This project is built with a focus on responsiveness, security, and seamless user experience.
+
+<br>
+
+![Volunteer Management](https://i.ibb.co.com/Yk6F7Ty/volunteer-ss.png)
 
 ## **🎯 Purpose**
 To simplify volunteer coordination and provide a centralized platform to manage and participate in community services.
@@ -39,27 +43,60 @@ To simplify volunteer coordination and provide a centralized platform to manage 
 #### **Responsive design**
  - for mobile, tablet, and desktop.
 
-## **npm packages I used**
-
+### Dependencies
+- `@emotion/react`
 - `axios`
 - `firebase`
+- `localforage`
 - `lottie-react`
 - `match-sorter`
 - `moment`
 - `react`
+- `react-awesome-reveal`
 - `react-datepicker`
 - `react-dom`
-- `react-awesome-reveal`
 - `react-helmet-async`
 - `react-icons`
 - `react-router-dom`
 - `react-toastify`
 - `react-tooltip`
+- `sort-by`
 - `sweetalert2`
 - `swiper`
-- `cookie-parser`
-- `cors`
-- `dotenv`
-- `express`
-- `jsonwebtoken`
-- `mongodb`
+
+### DevDependencies
+- `@eslint/js`
+- `@types/react`
+- `@types/react-dom`
+- `@vitejs/plugin-react`
+- `autoprefixer`
+- `daisyui`
+- `eslint`
+- `eslint-plugin-react`
+- `eslint-plugin-react-hooks`
+- `eslint-plugin-react-refresh`
+- `globals`
+- `postcss`
+- `tailwindcss`
+- `vite`
+
+    ## Installation
+1. Clone the repo:
+   ```
+   git clone https://github.com/AnsarulIslam10/Chill-Gamer-Client.git
+   ```
+2. Install dependencies:
+   ```
+   npm install
+   ```
+3. Set up Firebase and add config in `.env`
+   
+5. Add **API URL** to your `.env`
+   ```
+   VITE_API_URL=https://volunteer-management-server-azure.vercel.app
+   ```
+6. Run locally:
+   ```
+   npm run dev
+   ```
+
