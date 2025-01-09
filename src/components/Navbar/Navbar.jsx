@@ -54,34 +54,38 @@ const Navbar = () => {
           All Posts
         </NavLink>
       </li>
-      <li className="hover:dark:bg-[#222222]">
-        <NavLink
-          to={"/add-volunteer-need-post"}
-          className={({ isActive }) =>
-            `btn btn-sm btn-ghost rounded-none text-green-500 ${
-              isActive
-                ? "border-green-500 border-b-4 border-t-0 border-l-0 border-r-0 text-green-500"
-                : ""
-            }`
-          }
-        >
-          Add Post
-        </NavLink>
-      </li>
-      <li className="hover:dark:bg-[#222222]">
-        <NavLink
-          to={"/manage-my-posts"}
-          className={({ isActive }) =>
-            `btn btn-sm btn-ghost rounded-none text-green-500 ${
-              isActive
-                ? "border-green-500 border-b-4 border-t-0 border-l-0 border-r-0 text-green-500"
-                : ""
-            }`
-          }
-        >
-          My Posts
-        </NavLink>
-      </li>
+      {user && (
+        <>
+          <li className="hover:dark:bg-[#222222]">
+            <NavLink
+              to={"/add-volunteer-need-post"}
+              className={({ isActive }) =>
+                `btn btn-sm btn-ghost rounded-none text-green-500 ${
+                  isActive
+                    ? "border-green-500 border-b-4 border-t-0 border-l-0 border-r-0 text-green-500"
+                    : ""
+                }`
+              }
+            >
+              Add Post
+            </NavLink>
+          </li>
+          <li className="hover:dark:bg-[#222222]">
+            <NavLink
+              to={"/manage-my-posts"}
+              className={({ isActive }) =>
+                `btn btn-sm btn-ghost rounded-none text-green-500 ${
+                  isActive
+                    ? "border-green-500 border-b-4 border-t-0 border-l-0 border-r-0 text-green-500"
+                    : ""
+                }`
+              }
+            >
+              My Posts
+            </NavLink>
+          </li>
+        </>
+      )}
     </>
   );
   return (
