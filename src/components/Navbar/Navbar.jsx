@@ -30,7 +30,7 @@ const Navbar = () => {
         <NavLink
           to={"/"}
           className={({ isActive }) =>
-            `btn btn-sm btn-ghost rounded-none ${
+            `btn btn-sm btn-ghost rounded-none text-green-500 ${
               isActive
                 ? "border-green-500 border-b-4 border-t-0 border-l-0 border-r-0 text-green-500"
                 : ""
@@ -44,50 +44,43 @@ const Navbar = () => {
         <NavLink
           to={"/all-volunteer-need-posts"}
           className={({ isActive }) =>
-            `btn btn-sm btn-ghost rounded-none ${
+            `btn btn-sm btn-ghost rounded-none text-green-500 ${
               isActive
                 ? "border-green-500 border-b-4 border-t-0 border-l-0 border-r-0 text-green-500"
                 : ""
             }`
           }
         >
-          All Volunteer Need Posts
+          All Posts
         </NavLink>
       </li>
-      <li>
-        <details>
-          <summary className="w-[80%] md:w-auto btn btn-sm btn-ghost rounded-none">My Profile</summary>
-          <ul className="p-2 w-24 sm:w-44 lg:w-52 relative right-5 z-10 rounded-md dark:bg-[#181818] dark:text-[#e0e0e0] text-black backdrop-blur-sm">
-            <li className="hover:dark:bg-[#222222]">
-              <NavLink
-                to={"/add-volunteer-need-post"}
-                className={({ isActive }) =>
-                  `btn btn-sm btn-ghost rounded-none ${
-                    isActive
-                      ? "border-green-500 border-b-4 border-t-0 border-l-0 border-r-0 text-green-500"
-                      : ""
-                  }`
-                }
-              >
-                Add Volunteer Need Post
-              </NavLink>
-            </li>
-            <li className="hover:dark:bg-[#222222]">
-              <NavLink
-                to={"/manage-my-posts"}
-                className={({ isActive }) =>
-                  `btn btn-sm btn-ghost rounded-none ${
-                    isActive
-                      ? "border-green-500 border-b-4 border-t-0 border-l-0 border-r-0 text-green-500"
-                      : ""
-                  }`
-                }
-              >
-                Manage My Posts
-              </NavLink>
-            </li>
-          </ul>
-        </details>
+      <li className="hover:dark:bg-[#222222]">
+        <NavLink
+          to={"/add-volunteer-need-post"}
+          className={({ isActive }) =>
+            `btn btn-sm btn-ghost rounded-none text-green-500 ${
+              isActive
+                ? "border-green-500 border-b-4 border-t-0 border-l-0 border-r-0 text-green-500"
+                : ""
+            }`
+          }
+        >
+          Add Post
+        </NavLink>
+      </li>
+      <li className="hover:dark:bg-[#222222]">
+        <NavLink
+          to={"/manage-my-posts"}
+          className={({ isActive }) =>
+            `btn btn-sm btn-ghost rounded-none text-green-500 ${
+              isActive
+                ? "border-green-500 border-b-4 border-t-0 border-l-0 border-r-0 text-green-500"
+                : ""
+            }`
+          }
+        >
+          My Posts
+        </NavLink>
       </li>
     </>
   );
@@ -97,7 +90,7 @@ const Navbar = () => {
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="lg:hidden mr-2 text-xl">
-             <FaBars/>
+              <FaBars />
             </div>
             <ul
               tabIndex={0}
@@ -110,8 +103,8 @@ const Navbar = () => {
             to={"/"}
             className="cursor-pointer text-3xl tracking-widest text-green-500 font-bold flex items-center gap-2 uppercase "
           >
-            {<FaHands className="text-4xl block md:hidden"/>}
-             <span className="hidden md:block">Volunary</span>
+            {<FaHands className="text-4xl block md:hidden" />}
+            <span className="hidden md:block">Volunary</span>
           </Link>
         </div>
         <div className="navbar-center hidden lg:flex">
