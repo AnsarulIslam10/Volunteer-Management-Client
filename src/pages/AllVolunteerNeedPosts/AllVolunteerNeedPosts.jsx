@@ -32,7 +32,7 @@ const AllVolunteerNeedPosts = () => {
       </Helmet>
       <div className="flex items-center flex-col lg:flex-row justify-between">
         <Slide triggerOnce>
-          <h1 className="sm:text-2xl md:text-4xl text-green-600 dark:shadow-white/10 inline-block font-bold up border-l-4 border-green-500 pl-2 mb-8">
+          <h1 className="sm:text-2xl md:text-4xl text-green-600 dark:shadow-white/10 inline-block font-bold mb-8">
             All Volunteer Need Posts
             <span className="badge badge-success text-white badge-lg drop-shadow-lg w-6 h-6 sm:w-8 sm:h-8  relative sm:bottom-1 md:bottom-2 ml-2">
               {posts.length}
@@ -68,7 +68,7 @@ const AllVolunteerNeedPosts = () => {
       </div>
 
       {viewMode === "grid" ? (
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
           {posts.map((post) => (
             <Zoom key={post._id} triggerOnce>
               <PostCard post={post}></PostCard>

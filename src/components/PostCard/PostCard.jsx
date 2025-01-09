@@ -6,7 +6,7 @@ const PostCard = ({ post }) => {
   return (
     <div className="bg-white h-[100%] hover:scale-105 transition-all duration-300 flex flex-col justify-center dark:bg-[#1a242e] rounded-lg shadow-lg overflow-hidden">
       <img
-        className="w-full h-48 rounded-t-lg object-cover"
+        className="w-full h-44 rounded-t-lg object-cover"
         src={thumbnail}
         alt=""
       />

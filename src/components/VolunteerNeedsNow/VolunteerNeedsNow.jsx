@@ -19,10 +19,10 @@ const VolunteerNeedsNow = () => {
   }, []);
   return (
     <div className="my-16">
-      <h1 className="sm:text-2xl md:text-4xl text-green-600 dark:shadow-white/10 inline-block font-bold up border-l-4 border-green-500 pl-2 mb-8">
+      <h1 className="sm:text-2xl md:text-4xl text-green-600 dark:shadow-white/10 font-bold text-center mb-8">
         Volunteer Needs Now
       </h1>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
         {posts.map((post) => (
           <Fade key={post._id} triggerOnce>
             <VolunteerNeedsNowCard post={post}></VolunteerNeedsNowCard>

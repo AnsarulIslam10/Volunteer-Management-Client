@@ -4,6 +4,7 @@ import VolunteerNeedsNow from "../../components/VolunteerNeedsNow/VolunteerNeeds
 import FAQs from "../../components/FAQs/FAQs";
 import Testimonials from "../../components/Testimonials/Testimonials";
 import { Helmet } from "react-helmet-async";
+import Contact from "../../components/Contact/Contact";
 
 const HomePage = () => {
   return (
@@ -15,6 +16,7 @@ const HomePage = () => {
       <VolunteerNeedsNow />
       <Testimonials />
       <FAQs />
+      <Contact></Contact>
     </div>
   );
 };

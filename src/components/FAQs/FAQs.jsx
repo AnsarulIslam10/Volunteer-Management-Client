@@ -4,7 +4,7 @@ import Lottie from "lottie-react";
 const FAQs = () => {
   return (
     <div className="mb-16">
-        <h1 className="sm:text-2xl md:text-4xl text-green-600 dark:shadow-white/10 inline-block font-bold up border-l-4 border-green-500 pl-2 mb-8">
+        <h1 className="sm:text-2xl md:text-4xl text-green-600 dark:shadow-white/10 font-bold text-center">
           Frequently asked questions
         </h1>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-3 items-center">
