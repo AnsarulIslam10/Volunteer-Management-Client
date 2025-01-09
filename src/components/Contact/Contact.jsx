@@ -55,7 +55,7 @@ const Contact = () => {
                 id="name"
                 name="from_name"
                 required
-                className="w-full p-3 mt-2 rounded-lg"
+                className="w-full p-3 mt-2 input input-bordered dark:bg-[#1a242e] rounded-lg"
                 placeholder="Enter your email"
               />
             </div>
@@ -68,7 +68,7 @@ const Contact = () => {
                 id="email"
                 name="from_email"
                 required
-                className="w-full p-3 mt-2 text-white  rounded-lg"
+                className="w-full p-3 mt-2 input input-bordered text-white dark:bg-[#1a242e] rounded-lg"
                 placeholder="Enter your email"
               />
             </div>
@@ -81,7 +81,7 @@ const Contact = () => {
                 name="message"
                 required
                 rows="4"
-                className="w-full p-3 mt-2 rounded-lg"
+                className="w-full p-3 mt-2 textarea textarea-bordered dark:bg-[#1a242e] rounded-lg"
                 placeholder="Write your message here"
               />
             </div>
