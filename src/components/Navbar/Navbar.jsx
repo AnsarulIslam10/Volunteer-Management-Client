@@ -168,7 +168,7 @@ const Navbar = () => {
                 data-tooltip-content={user.displayName}
               >
                 <img
-                  className="sm:w-10 sm:h-10 w-7 h-7 border-2 border-green-500 rounded-full ml-1"
+                  className="sm:w-10 sm:h-10 w-7 h-7 border-2 border-green-500 rounded-full"
                   referrerPolicy="no-referrer"
                   src={user?.photoURL}
                   alt=""
@@ -176,7 +176,7 @@ const Navbar = () => {
               </div>
               <button
                 onClick={handleLogOut}
-                className="btn btn-sm md:btn-md border-none rounded-full bg-green-500 text-white hover:bg-green-600 transition-colors duration-300 font-semibold text-lg"
+                className="btn btn-sm md:btn-md ml-2 border-none rounded-full text-xs bg-green-500 text-white hover:bg-green-600 transition-colors duration-300 font-semibold sm:text-lg"
               >
                 Log Out
               </button>
@@ -184,7 +184,7 @@ const Navbar = () => {
           ) : (
             <Link
               to={"/login"}
-              className="btn border-none rounded-full ml-2 bg-green-500 text-white hover:bg-green-600 transition-colors duration-300 font-semibold text-lg"
+              className="btn btn-sm md:btn-md border-none rounded-full ml-2 bg-green-500 text-white hover:bg-green-600 text-xs transition-colors duration-300 font-semibold sm:text-lg"
             >
               Login
             </Link>

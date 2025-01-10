@@ -11,6 +11,8 @@ const AllVolunteerNeedPosts = () => {
   const [posts, setPosts] = useState([]);
   const [search, setSearch] = useState("");
   const [viewMode, setViewMode] = useState("grid");
+  const [sortCriteria, setSortCriteria] = useState("");
+
   useEffect(() => {
     const fetchAllPosts = async () => {
       const { data } = await axios.get(
@@ -25,8 +27,22 @@ const AllVolunteerNeedPosts = () => {
     setViewMode((prevMode) => (prevMode === "grid" ? "table" : "grid"));
   };
 
+  const handleSortChange = (e) => {
+    setSortCriteria(e.target.value);
+  };
+
+  const sortedPosts = [...posts].sort((a, b) => {
+    if (sortCriteria === "Deadline") {
+      return new Date(a.deadline) - new Date(b.deadline);
+    } else if (sortCriteria === "Volunteer") {
+      return b.volunteersNumber - a.volunteersNumber;
+    } else {
+      return 0;
+    }
+  });
+
   return (
-    <div className="my-16 max-w-7xl px-2 mx-auto">
+    <div className="my-6 sm:my-8 md:my-16 max-w-7xl px-2 mx-auto">
       <Helmet>
         <title>Volunary | All Volunteer Need Posts</title>
       </Helmet>
@@ -40,18 +56,29 @@ const AllVolunteerNeedPosts = () => {
           </h1>
         </Slide>
         <Slide triggerOnce direction="right">
-          <div className="flex items-center gap-4">
-            <div className="flex justify-end text-3xl gap-3 mb-3 text-gray-600">
-              <button onClick={toggleView}>
-                <FaTh
-                  className={`${viewMode === "grid" ? "text-blue-400" : ""}`}
-                />
-              </button>
-              <button onClick={toggleView}>
-                <FaBars
-                  className={`${viewMode === "table" ? "text-blue-400" : ""}`}
-                />
-              </button>
+          <div className="flex items-center flex-col-reverse sm:flex-row gap-4">
+            <div className="flex gap-2 items-center">
+              <div className="flex justify-end text-3xl gap-3 mb-3 text-gray-600">
+                <button onClick={toggleView}>
+                  <FaTh
+                    className={`${viewMode === "grid" ? "text-blue-400" : ""}`}
+                  />
+                </button>
+                <button onClick={toggleView}>
+                  <FaBars
+                    className={`${viewMode === "table" ? "text-blue-400" : ""}`}
+                  />
+                </button>
+              </div>
+              <select
+                onChange={handleSortChange}
+                value={sortCriteria}
+                className="select select-bordered rounded-full text-gray-600 w-full mb-4 max-w-xs"
+              >
+                <option value="">Sort By</option>
+                <option value="Deadline">Deadline</option>
+                <option value="Volunteer">Volunteer</option>
+              </select>
             </div>
             <label className="input input-bordered rounded-full input-sm sm:input-md flex items-center mb-4 gap-2">
               <input
@@ -69,7 +96,7 @@ const AllVolunteerNeedPosts = () => {
 
       {viewMode === "grid" ? (
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-          {posts.map((post) => (
+          {sortedPosts.map((post) => (
             <Zoom key={post._id} triggerOnce>
               <PostCard post={post}></PostCard>
             </Zoom>
@@ -90,7 +117,7 @@ const AllVolunteerNeedPosts = () => {
               </tr>
             </thead>
             <tbody>
-              {posts.map((post) => (
+              {sortedPosts.map((post) => (
                 <tr
                   key={post._id}
                   className="dark:hover:bg-[#0e141a] shadow-md dark:bg-[#141c24] hover:bg-[#eceaea]"
