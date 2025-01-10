@@ -103,8 +103,8 @@ const Navbar = () => {
     </>
   );
   return (
-    <nav className="max-w-[1400px] mx-auto sticky top-0 z-50">
-      <div className="navbar bg-base-100 backdrop-blur-md dark:bg-black/5 bg-white/5 px-2">
+    <nav className="max-w-7xl mx-auto px-2 sticky top-0 z-50">
+      <div className="navbar bg-base-100 backdrop-blur-md dark:bg-black/5 bg-white/5 px-0">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="lg:hidden mr-2 text-xl">
@@ -176,7 +176,7 @@ const Navbar = () => {
               </div>
               <button
                 onClick={handleLogOut}
-                className="btn btn-sm md:btn-md border-none rounded-full bg-green-500 text-white font-semibold text-lg"
+                className="btn btn-sm md:btn-md border-none rounded-full bg-green-500 text-white hover:bg-green-600 transition-colors duration-300 font-semibold text-lg"
               >
                 Log Out
               </button>
@@ -184,7 +184,7 @@ const Navbar = () => {
           ) : (
             <Link
               to={"/login"}
-              className="btn border-none rounded-full bg-green-500 text-white font-semibold text-lg"
+              className="btn border-none rounded-full bg-green-500 text-white hover:bg-green-600 transition-colors duration-300 font-semibold text-lg"
             >
               Login
             </Link>

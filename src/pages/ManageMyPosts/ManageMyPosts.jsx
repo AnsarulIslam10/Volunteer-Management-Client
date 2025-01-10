@@ -65,13 +65,13 @@ const ManageMyPosts = () => {
   }
 
   return (
-    <div className="sm:my-16 my-8 max-w-[1400px] px-2 mx-auto">
+    <div className="sm:my-16 my-8 max-w-7xl px-2 mx-auto">
       <Helmet>
         <title>Volunary | Manage My Posts</title>
       </Helmet>
       {!myPosts || myPosts.length === 0 ? (
         <div className="min-h-[60vh]">
-          <h1 className="sm:text-2xl md:text-4xl text-green-600 dark:shadow-white/10 inline-block font-bold up border-l-4 border-green-500 pl-2 mb-8">
+          <h1 className="text-xl sm:text-2xl md:text-4xl text-green-600 dark:shadow-white/10 inline-block font-bold up border-l-4 border-green-500 pl-2 mb-8">
             My Volunteer Need Post
           </h1>
           <p className="text-3xl font-semibold text-center text-red-400">
@@ -81,7 +81,7 @@ const ManageMyPosts = () => {
       ) : (
         <div className="mb-16">
           <div>
-            <h1 className="sm:text-2xl md:text-4xl text-green-600 dark:shadow-white/10 inline-block font-bold up border-l-4 border-green-500 pl-2 mb-8">
+            <h1 className="text-xl sm:text-2xl md:text-4xl text-green-600 dark:shadow-white/10 inline-block font-bold up border-l-4 border-green-500 pl-2 mb-8">
               My Volunteer Need Post
               <span className="badge badge-success text-white badge-lg drop-shadow-lg w-6 h-6 sm:w-8 sm:h-8  relative sm:bottom-1 md:bottom-2 ml-2">
                 {myPosts.length}

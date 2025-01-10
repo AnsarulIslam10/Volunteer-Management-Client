@@ -10,7 +10,7 @@ const ErrorPage = () => {
       <Helmet>
         <title>Volunary | Error Page</title>
       </Helmet>
-      <Lottie className="w-[800px]" animationData={pageNotFound}></Lottie>
+      <Lottie className="md:w-[800px]" animationData={pageNotFound}></Lottie>
       <Link
         to={"/"}
         className="btn bg-green-500 text-white text-lg hover:bg-green-600"

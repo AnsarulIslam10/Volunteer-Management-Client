@@ -34,8 +34,8 @@ const VolunteerNeedPostDetails = () => {
       <Helmet>
         <title>Volunary | Volunteer Need Post Details</title>
       </Helmet>
-      <div className="max-w-5xl mx-auto border dark:border-gray-500 rounded-3xl p-4 sm:p-8 md:p-12 shadow-sm">
-        <h2 className="text-4xl text-green-600 inline-block shadow-lg p-3 drop-shadow-xl font-bold up border-l-4 border-green-500 pl-2 mb-8">
+      <div className="max-w-5xl mx-auto bg-white rounded-3xl p-4 dark:bg-slate-800 sm:p-8 md:p-12 shadow-sm">
+        <h2 className="text-4xl text-green-600 inline-block p-3 font-bold up border-l-4 border-green-500 pl-2 mb-8">
           <span>{title}</span>
         </h2>
         <div>
@@ -49,19 +49,19 @@ const VolunteerNeedPostDetails = () => {
           <div>
             <p className="font-semibold dark:text-[#e0e0e0] text-gray-700">
               Category:{" "}
-              <span className="font-normal dark:text-[#c0bebe]  text-gray-600">
+              <span className="font-normal dark:text-[#ebeaea]  text-gray-600">
                 {category}
               </span>
             </p>
             <p className="font-semibold dark:text-[#e0e0e0] text-gray-700">
               Location:{" "}
-              <span className="font-normal dark:text-[#c0bebe]  text-gray-600">
+              <span className="font-normal dark:text-[#ebeaea] text-gray-600">
                 {location}
               </span>
             </p>
             <p className="font-semibold dark:text-[#e0e0e0] text-gray-700 mb-2">
               Deadline:{" "}
-              <span className="font-normal dark:text-[#c0bebe]  text-gray-600">
+              <span className="font-normal dark:text-[#ebeaea]  text-gray-600">
                 {moment(deadline).format("DD/MM/YYYY")}
               </span>
             </p>
@@ -85,13 +85,13 @@ const VolunteerNeedPostDetails = () => {
             <div className="p-2 mb-2">
               <p className="font-semibold dark:text-[#e0e0e0] text-gray-700">
                 Name:
-                <span className="font-normal dark:text-[#c0bebe]  ml-1 text-gray-600">
+                <span className="font-normal dark:text-[#ebeaea]   ml-1 text-gray-600">
                   {organizer?.organizerName}
                 </span>
               </p>
               <p className="font-semibold dark:text-[#e0e0e0] text-gray-700">
                 Email:
-                <span className="font-normal dark:text-[#c0bebe]  ml-1 text-gray-600">
+                <span className="font-normal dark:text-[#ebeaea] ml-1 text-gray-600">
                   {organizer?.organizerEmail}
                 </span>
               </p>

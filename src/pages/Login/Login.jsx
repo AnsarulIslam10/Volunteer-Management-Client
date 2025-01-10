@@ -62,7 +62,7 @@ const Login = () => {
   };
 
   return (
-    <div className="flex justify-center items-center max-w-[1400px] mx-auto px-2 my-16 min-h-screen">
+    <div className="flex justify-center items-center max-w-7xl mx-auto px-2 my-16 min-h-screen">
       <Helmet>
         <title>Volunary | Login</title>
       </Helmet>

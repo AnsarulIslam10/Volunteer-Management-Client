@@ -50,7 +50,7 @@ const AddVolunteerNeedPost = () => {
   };
 
   return (
-    <div className="min-h-screen max-w-[1400px] mx-auto flex flex-col items-center justify-center py-10 px-2">
+    <div className="min-h-screen max-w-7xl mx-auto flex flex-col items-center justify-center py-10 px-2">
       <Helmet>
         <title>Volunary | Add Volunteer Need Post</title>
       </Helmet>

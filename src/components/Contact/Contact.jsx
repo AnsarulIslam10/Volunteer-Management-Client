@@ -35,11 +35,11 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="my-16">
-      <h2 className="sm:text-2xl md:text-4xl text-green-600 dark:shadow-white/10 font-bold text-center mb-8">
+    <section id="contact" className="my-24">
+      <h2 className="text-xl sm:text-2xl md:text-4xl text-green-600 dark:shadow-white/10 font-bold text-center mb-8">
         Contact Information
       </h2>
-      <div className="p-8 rounded-lg flex items-center justify-between">
+      <div className="p-2 sm:p-4 md:p-8 rounded-lg flex items-center justify-between">
         {/* Contact Form */}
         <div className="space-y-6 w-full md:w-1/2">
           <h3 className="text-2xl sm:text-3xl font-semibold  mb-4">

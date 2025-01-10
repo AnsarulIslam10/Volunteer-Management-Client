@@ -8,7 +8,7 @@ import Contact from "../../components/Contact/Contact";
 
 const HomePage = () => {
   return (
-    <div className="max-w-[1400px] px-2 mx-auto dark:bg-[#181818]">
+    <div className="max-w-7xl px-2 mx-auto dark:bg-[#181818]">
       <Helmet>
         <title>Volunary | Homepage</title>
       </Helmet>

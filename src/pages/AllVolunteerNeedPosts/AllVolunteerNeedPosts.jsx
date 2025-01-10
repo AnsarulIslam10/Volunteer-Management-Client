@@ -26,13 +26,13 @@ const AllVolunteerNeedPosts = () => {
   };
 
   return (
-    <div className="my-16 max-w-[1400px] px-2 mx-auto">
+    <div className="my-16 max-w-7xl px-2 mx-auto">
       <Helmet>
         <title>Volunary | All Volunteer Need Posts</title>
       </Helmet>
       <div className="flex items-center flex-col lg:flex-row justify-between">
         <Slide triggerOnce>
-          <h1 className="sm:text-2xl md:text-4xl text-green-600 dark:shadow-white/10 inline-block font-bold mb-8">
+          <h1 className="text-xl sm:text-2xl md:text-4xl text-green-600 dark:shadow-white/10 inline-block font-bold mb-8">
             All Volunteer Need Posts
             <span className="badge badge-success text-white badge-lg drop-shadow-lg w-6 h-6 sm:w-8 sm:h-8  relative sm:bottom-1 md:bottom-2 ml-2">
               {posts.length}

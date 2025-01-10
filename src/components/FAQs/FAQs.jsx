@@ -3,15 +3,15 @@ import faq from "../../assets/animations/faq.json";
 import Lottie from "lottie-react";
 const FAQs = () => {
   return (
-    <div className="mb-16">
-        <h1 className="sm:text-2xl md:text-4xl text-green-600 dark:shadow-white/10 font-bold text-center">
+    <div className="mb-24">
+        <h1 className="text-xl sm:text-2xl md:text-4xl text-green-600 dark:shadow-white/10 font-bold text-center mb-12">
           Frequently asked questions
         </h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-3 items-center">
+      <div className="flex items-center justify-between">
         <div>
-          <Lottie animationData={faq}></Lottie>
+          <Lottie className="w-52 hidden md:block lg:w-96" animationData={faq}></Lottie>
         </div>
-        <div className="space-y-3">
+        <div className="space-y-3 md:w-1/2">
           <div className="collapse dark:bg-[#1a242e] collapse-arrow bg-base-200">
             <input type="radio" name="my-accordion-2" defaultChecked />
             <div className="collapse-title text-xl font-medium">
