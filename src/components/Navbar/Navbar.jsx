@@ -84,13 +84,27 @@ const Navbar = () => {
               My Posts
             </NavLink>
           </li>
+          <li className="hover:dark:bg-[#222222]">
+            <NavLink
+              to={"/manage-my-requested-posts"}
+              className={({ isActive }) =>
+                `btn btn-sm btn-ghost rounded-none text-green-500 ${
+                  isActive
+                    ? "border-green-500 border-b-4 border-t-0 border-l-0 border-r-0 text-green-500"
+                    : ""
+                }`
+              }
+            >
+              My Requested Posts
+            </NavLink>
+          </li>
         </>
       )}
     </>
   );
   return (
-    <nav className="max-w-7xl px-2 mx-auto sticky top-0 z-50">
-      <div className="navbar bg-base-100 backdrop-blur-md dark:bg-black/5 bg-white/5 px-0">
+    <nav className="max-w-[1400px] mx-auto sticky top-0 z-50">
+      <div className="navbar bg-base-100 backdrop-blur-md dark:bg-black/5 bg-white/5 px-2">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="lg:hidden mr-2 text-xl">

@@ -59,7 +59,7 @@ const UpdateMyPost = () => {
     }
   };
   return (
-    <div className="min-h-screen max-w-7xl mx-auto px-2 flex flex-col items-center justify-center py-10">
+    <div className="min-h-screen max-w-[1400px] mx-auto px-2 flex flex-col items-center justify-center py-10">
       <Helmet>
         <title>Volunary | Update My Post</title>
       </Helmet>

@@ -26,7 +26,7 @@ const AllVolunteerNeedPosts = () => {
   };
 
   return (
-    <div className="my-16 max-w-7xl px-2 mx-auto">
+    <div className="my-16 max-w-[1400px] px-2 mx-auto">
       <Helmet>
         <title>Volunary | All Volunteer Need Posts</title>
       </Helmet>

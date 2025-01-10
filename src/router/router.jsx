@@ -10,6 +10,7 @@ import ErrorPage from "../pages/ErrorPage/ErrorPage";
 import VolunteerNeedPostDetails from "../pages/VolunteerNeedPostDetails/VolunteerNeedPostDetails";
 import ManageMyPosts from "../pages/ManageMyPosts/ManageMyPosts";
 import UpdateMyPost from "../pages/UpdateMyPost/UpdateMyPost";
+import MyVolunteerRequestPost from "../pages/MyVolunteerRequestPost/MyVolunteerRequestPost";
 
 const router = createBrowserRouter([
   {
@@ -36,6 +37,10 @@ const router = createBrowserRouter([
         {
             path: '/manage-my-posts',
             element: <PrivateRoute><ManageMyPosts></ManageMyPosts></PrivateRoute>,
+        },
+        {
+            path: '/manage-my-requested-posts',
+            element: <PrivateRoute><MyVolunteerRequestPost></MyVolunteerRequestPost></PrivateRoute>,
         },
         {
             path: '/update-my-post/:id',

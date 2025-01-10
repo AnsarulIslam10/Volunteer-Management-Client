@@ -20,7 +20,7 @@ const PostCard = ({ post }) => {
         </p>
         <p className="text-sm text-gray-500 dark:text-[#e0e0e0] mb-2">
           Deadline:{" "}
-          <span className="text-gray-500 dark:text-[#c0bebe] font-semibold">
+          <span className="text-gray-500 dark:text-white font-semibold">
             {moment(deadline).format("DD/MM/YYYY")}
           </span>
         </p>
