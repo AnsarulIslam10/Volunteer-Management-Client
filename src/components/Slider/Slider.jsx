@@ -32,7 +32,7 @@ const Slider = () => {
         className="mySwiper"
       >
         <SwiperSlide className="relative">
-          <img className="object-cover w-full" src={slider1} />
+          <img className="object-cover h-60vh md:h-[70vh] w-full" src={slider1} />
           <div
             className="absolute top-0 w-full h-full text-start flex flex-col justify-center pl-20
            p-12 text-white bg-black bg-opacity-50"
@@ -57,7 +57,7 @@ const Slider = () => {
           </div>
         </SwiperSlide>
         <SwiperSlide className="relative">
-          <img className="object-cover w-full" src={slider2} />
+          <img className="object-cover h-60vh md:h-[70vh] w-full" src={slider2} />
           <div
             className="absolute top-0 w-full h-full text-start flex flex-col justify-center pl-20
            p-12 text-white bg-black bg-opacity-50"
@@ -82,7 +82,7 @@ const Slider = () => {
           </div>
         </SwiperSlide>
         <SwiperSlide className="relative">
-          <img className="object-cover w-full" src={slider3} />
+          <img className="object-cover h-60vh md:h-[70vh] w-full" src={slider3} />
           <div
             className="absolute top-0 w-full h-full text-start flex flex-col justify-center pl-20
            p-12 text-white bg-black bg-opacity-50"
