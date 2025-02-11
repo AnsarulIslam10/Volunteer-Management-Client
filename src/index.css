@@ -7,4 +7,5 @@
 * {
   @apply transition-colors duration-75;
   font-family: Raleway;
+  scroll-behavior: smooth;
 }

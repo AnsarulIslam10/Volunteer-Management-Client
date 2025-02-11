@@ -100,6 +100,9 @@ const Navbar = () => {
           </li>
         </>
       )}
+      <li>
+        <a href="#contact" className="btn btn-sm btn-ghost rounded-none text-green-500">Contact</a>
+      </li>
     </>
   );
   return (
