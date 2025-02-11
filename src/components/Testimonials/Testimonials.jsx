@@ -6,10 +6,10 @@ const Testimonials = () => {
         <h1 className="text-xl sm:text-2xl md:text-4xl text-green-600 dark:shadow-white/10 font-bold text-center mb-8 md:mb-16">
           Testimonials
         </h1>
-      <div className="grid grid-cols-1 lg:grid-cols-3  gap-4 justify-items-center">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3  gap-6">
         {/* card 1 */}
         <Slide triggerOnce>
-          <div className="card h-[100%] bg-white sm:w-96 lg:w-auto relative lg:left-32 lg:hover:left-0 transition-all duration-500 cursor-pointer dark:bg-[#1a242e] px-4 shadow-xl rounded-xl">
+          <div className="card h-[100%] bg-white sm:w-96 cursor-pointer dark:bg-[#1a242e] px-4 shadow-xl rounded-xl">
             <div className="flex justify-center pt-3">
               <img
                 className="w-20 h-20 object-cover rounded-full"
@@ -28,7 +28,7 @@ const Testimonials = () => {
           </div>
         </Slide>
         {/* card 2 */}
-        <div className="card bg-white z-10 lg:scale-110 dark:bg-[#1a242e] px-4 shadow-xl lg:drop-shadow-md sm:w-96 lg:w-auto lg:dark:shadow-green-50/5 cursor-pointer rounded-xl">
+        <div className="card bg-white dark:bg-[#1a242e] px-4 shadow-xl lg:drop-shadow-md sm:w-96 lg:w-auto lg:dark:shadow-green-50/5 cursor-pointer rounded-xl">
           <div className="flex justify-center pt-3">
             <img
               className="w-20 h-20 object-cover rounded-full"
@@ -46,7 +46,7 @@ const Testimonials = () => {
         </div>
         {/* card 3 */}
         <Slide triggerOnce direction="right">
-          <div className="card h-[100%] bg-white sm:w-96 lg:w-auto lg:right-32 lg:hover:right-0 transition-all duration-500 cursor-pointer dark:bg-[#1a242e] px-4 shadow-xl rounded-xl">
+          <div className="card h-[100%] bg-white sm:w-96 cursor-pointer dark:bg-[#1a242e] px-4 shadow-xl rounded-xl">
             <div className="flex justify-center pt-3">
               <img
                 className="w-20 h-20 object-cover rounded-full"
