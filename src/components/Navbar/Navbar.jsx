@@ -1,11 +1,12 @@
 import React, { useContext, useEffect, useState } from "react";
-import { Link, NavLink, useNavigate } from "react-router-dom";
+import { Link, NavLink, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../provider/AuthProvider";
 import { FaBars, FaHands } from "react-icons/fa";
 
 const Navbar = () => {
   const { user, signOutUser } = useContext(AuthContext);
   const navigate = useNavigate();
+  const location = useLocation();
   const [theme, setTheme] = useState("light");
   useEffect(() => {
     const storedTheme = localStorage.getItem("theme") || "light";
@@ -23,6 +24,17 @@ const Navbar = () => {
   const handleLogOut = () => {
     signOutUser();
     navigate("/");
+  };
+  const handleScroll = () => {
+    if (location.pathname !== "/") {
+      navigate("/");
+    }
+    setTimeout(() => {
+      const contact = document.getElementById("contact");
+      if (contact) {
+        contact.scrollIntoView({ behavior: "smooth" });
+      }
+    }, 100);
   };
   const links = (
     <>
@@ -101,7 +113,12 @@ const Navbar = () => {
         </>
       )}
       <li>
-        <a href="#contact" className="btn btn-sm btn-ghost rounded-none text-green-500">Contact</a>
+        <button
+          onClick={handleScroll}
+          className="btn btn-sm btn-ghost rounded-none text-green-500"
+        >
+          Contact
+        </button>
       </li>
     </>
   );
