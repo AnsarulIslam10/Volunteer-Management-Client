@@ -24,9 +24,9 @@ const Slider = () => {
           disableOnInteraction: false,
         }}
         loop={true}
-        // pagination={{
-        //   clickable: true,
-        // }}
+        pagination={{
+          clickable: true,
+        }}
         navigation={true}
         modules={[EffectFade, Autoplay, Pagination, Navigation]}
         className="mySwiper"

@@ -16,3 +16,7 @@
     fill: #22c55e !important;
     stroke: #22c55e !important;
 }
+
+.swiper-pagination-bullet-active {
+  background-color: #22c55e!important;
+}
