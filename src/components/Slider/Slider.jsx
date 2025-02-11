@@ -10,8 +10,8 @@ import "swiper/css/navigation";
 import { EffectFade, Autoplay, Pagination, Navigation } from "swiper/modules";
 import { Link } from "react-router-dom";
 import slider1 from "../../assets/sliderImages/slider1.jpg";
-import slider2 from "../../assets/sliderImages/slider2.jpg";
-import slider3 from "../../assets/sliderImages/slider3.jpg";
+import slider4 from "../../assets/sliderImages/firstslider.jpg";
+import slider5 from "../../assets/sliderImages/second.jpg";
 const Slider = () => {
   return (
     <>
@@ -57,7 +57,7 @@ const Slider = () => {
           </div>
         </SwiperSlide>
         <SwiperSlide className="relative">
-          <img className="object-cover h-60vh md:h-[70vh] w-full" src={slider2} />
+          <img className="object-cover h-60vh md:h-[70vh] w-full" src={slider5} />
           <div
             className="absolute top-0 w-full h-full text-start flex flex-col justify-center pl-20
            p-12 text-white bg-black bg-opacity-50"
@@ -82,7 +82,7 @@ const Slider = () => {
           </div>
         </SwiperSlide>
         <SwiperSlide className="relative">
-          <img className="object-cover h-60vh md:h-[70vh] w-full" src={slider3} />
+          <img className="object-cover h-60vh md:h-[70vh] w-full" src={slider4} />
           <div
             className="absolute top-0 w-full h-full text-start flex flex-col justify-center pl-20
            p-12 text-white bg-black bg-opacity-50"
