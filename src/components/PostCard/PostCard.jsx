@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import moment from "moment";
+import { FaCalendarAlt } from "react-icons/fa";
 const PostCard = ({ post }) => {
   const {
     _id,
@@ -27,8 +28,8 @@ const PostCard = ({ post }) => {
         <h2 className="text-xl font-semibold mb-2 cursor-pointer" title={title}>
           {title.length > 22 ? `${title.slice(0, 22)}...` : title}
         </h2>
-        <p className="text-sm font-semibold dark:text-[#f5f4f4] mb-1">
-          Deadline:{" "}
+        <p className="text-sm font-semibold dark:text-[#f5f4f4] mb-1 flex items-center gap-1">
+          <FaCalendarAlt/>{" "}
           <span className="dark:text-white font-normal">
             {moment(deadline).format("DD/MM/YYYY")}
           </span>
